@@ -45,4 +45,3 @@ F.__proto__.__proto__ === Object.prototype
 可以看出 `F.a -> F.__proto__.__proto__.a` `F.b -> F.__proto__.b`
 
 #### 扩展：[`new`操作符做的事情](https://github.com/shuch/blog/issues/11#issue-598184637)
-
