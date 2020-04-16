@@ -87,3 +87,6 @@ console.log 也是一个函数，继承自 Function, 所以 console.log.__proto_
 任何变量均能访问到定义在 `Object.prototype` 上的方法，任何可以调用的对象即函数都可以访问 `Function.prototype` 上的方法
 
 #### 扩展：[`new`操作符做的事情](https://github.com/shuch/blog/issues/11#issue-598184637)
+
+引用：
+[关于原型链，原来这么简单](https://www.lagou.com/lgeduarticle/20040.html)
