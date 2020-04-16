@@ -77,6 +77,10 @@ console.log.b();// b
 ```
 console 是一个对象，继承自 Object, console.__proto__ === Object.prototype
 
+c 是一个基本数据类型的实例，继承自 Number, 那么 c.__proto__ === Number.prototype, 
+进而 c.__proto__.__proto__ === Object.prototype
+
+console.log 也是一个函数，继承自 Function, 所以 console.log.__proto__ === Funtion.prototype
 ```
 
 #### 扩展：[`new`操作符做的事情](https://github.com/shuch/blog/issues/11#issue-598184637)
