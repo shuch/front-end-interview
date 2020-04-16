@@ -34,7 +34,7 @@ f.__proto__.__proto__ === Object.prototype
 2. 展开 `F` 原型链
 
 ```
-所有function 实例都继承自Function.prototype
+所有function 实例都继承自Function
 F.__proto__ === Function.prototype
 
 同理, Function.prototype 也是一个对象，继承自 Object, 
@@ -50,11 +50,10 @@ F.__proto__.__proto__ === Object.prototype
 
 分析：
 ```
-Object是一个函数，继承自 Function.prototype, 所以
+Object是一个函数，继承自 Function, 所以
 Object.__proto__ === Function.prototype;
 而 Function 也是一个函数，继承自己 
 Function.__proto__ === Function.prototype
-
 ```
 你会发现：
 ```
@@ -64,7 +63,7 @@ Funtion.a -> Function.__proto__.__proto__.a
 Funtion.b -> Function.__proto__.b
 ```
 
-### 追问2
+#### 追问2
 ```
 var c = 1;
 console.a();// a
@@ -73,6 +72,11 @@ c.a();// a
 c.b();// c.b is not a function
 console.log.a();// a
 console.log.b();// b
+```
+解析：
+```
+console 是一个对象，继承自 Object, console.__proto__ === Object.prototype
+
 ```
 
 #### 扩展：[`new`操作符做的事情](https://github.com/shuch/blog/issues/11#issue-598184637)
