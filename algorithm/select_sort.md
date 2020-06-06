@@ -29,4 +29,4 @@ function selectSort(arr) {
 
 特点：
 * 时间复杂度 O(n^2)
-* 稳定排序
+* 不稳定排序
