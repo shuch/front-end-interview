@@ -14,9 +14,12 @@ function selectSort(arr) {
         min = j;
       }
     }
-    var temp = arr[min];
-    arr[min] = arr[i];
-    arr[i] = temp;
+    // 当前元素不是最小的，则交换
+    if (min !== i) {
+      var temp = arr[min];
+      arr[min] = arr[i];
+      arr[i] = temp;    
+    }
   }
   
   return arr;
