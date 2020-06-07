@@ -22,6 +22,10 @@ function selectSort(arr) {
   return arr;
 }
 
+
+var arr = [5,4,5,2,1];
+console.log(selectSort(arr));
+// [1, 2, 4, 5, 5]
 ```
 
 原理：
