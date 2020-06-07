@@ -36,4 +36,4 @@ console.log(selectSort(arr));
 
 特点：
 * 时间复杂度 O(n<sup>2</sup>)
-* 不稳定排序
+* 相等元素相对位置改变，是不稳定排序
