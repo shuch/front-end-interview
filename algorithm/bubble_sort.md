@@ -19,7 +19,7 @@ function bubbleSort(arr) {
       }
     }
     
-    if (isBubble) {
+    if (!isBubble) {
       break;
     }
   }
