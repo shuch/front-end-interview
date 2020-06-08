@@ -7,8 +7,8 @@ function insertSort(arr) {
   }
   
   var len = arr.length;
-  for (var i = 1; i < len; i++) {// 提取未排序的元素
-    for (var j = i; j > 0; j--) {// 和已排序的比较
+  for (var i = 1; i < len; i++) {// 未排序的元素
+    for (var j = i; j > 0; j--) {// 已排序的从大往小比较
       if (arr[j] < arr[j-1]) { // 找到比要插入值大的元素，交换顺序
         var temp = arr[j];
         arr[j] = arr[j-1];
