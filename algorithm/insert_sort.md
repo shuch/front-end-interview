@@ -35,4 +35,4 @@ function insertSort(arr) {
 > 类似抓扑克牌，第一张有序，将抓到的牌依次和手上的牌比较
 
 参考：
-  [JS实现插入排序](https://segmentfault.com/a/1190000015489767){:blank:"_blank"}
+  [JS实现插入排序](https://segmentfault.com/a/1190000015489767){:target="_blank"}
