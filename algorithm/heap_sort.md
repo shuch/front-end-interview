@@ -15,18 +15,18 @@ function heapSort(arr) {
   return arr;
 }
 
-function buildMaxHeap(arr, heapSize) {
+function buildMaxHeap(arr) {// , heapSize
   var iParent = Math.floor(heapSize / 2);
   for (var i = iParent; i >=0; i--) {
-    maxHeapify(arr, i, heapSize);
+    maxHeapify(arr, i);// , heapSize
   }
 }
 
 function maxHeapify(arr, index ) {//,heapSize
-  var iMax, iLeft, iRight;
-      iMax = index;
-    iLeft = 2 * index + 1;
-    iRight = 2 * index + 1;
+  // var iMax, iLeft, iRight;
+    var iMax = index;
+    var iLeft = 2 * index + 1;
+    var iRight = 2 * index + 2;
 
     // 左孩子大于父节点
     if (iLeft < heapSize && arr[iLeft] > arr[iMax]) {
