@@ -16,6 +16,7 @@ function heapSort(arr) {
 }
 
 function buildMaxHeap(arr) {// , heapSize
+  heapSize = arr.length;
   var iParent = Math.floor(heapSize / 2);
   for (var i = iParent; i >=0; i--) {
     maxHeapify(arr, i);// , heapSize
