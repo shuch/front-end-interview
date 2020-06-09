@@ -6,7 +6,7 @@ function heapSort(arr) {
   // 构建大顶堆
   buildMaxHeap(arr);
   // 交换对顶元素和最后一个元素
-  for (var i = arr - 1; i > 0; i--) {
+  for (var i = arr.length - 1; i > 0; i--) {
     swap(arr, 0, i);
     heapSize--;
     console.log('i', i);
@@ -43,7 +43,7 @@ function maxHeapify(arr, index ) {//,heapSize
     if (iMax !== index) {
       swap(arr, index, iMax);
       //index = iMax;
-      maxHeapify(arr, iMax, heapSize);
+      maxHeapify(arr, iMax);// , heapSize
     }
   //return arr;
   //do {
