@@ -1,29 +1,29 @@
 # 堆排序
 
 ```javascript
-var heapSize;
+// var heapSize;
 function heapSort(arr) {
   // 构建大顶堆
   buildMaxHeap(arr);
-  // 交换对顶元素和最后一个元素
+  // 交换堆顶元素和最后一个元素
   for (var i = arr.length - 1; i > 0; i--) {
     swap(arr, 0, i);
-    heapSize--;
+    // heapSize--;
     console.log('i', i);
     maxHeapify(arr, 0, i);
   }
   return arr;
 }
 
-function buildMaxHeap(arr) {// , heapSize
-  heapSize = arr.length;
+function buildMaxHeap(arr) {// 
+  var heapSize = arr.length;
   var iParent = Math.floor(heapSize / 2);
-  for (var i = iParent; i >=0; i--) {
-    maxHeapify(arr, i);// , heapSize
+  for (var i = iParent; i >= 0; i--) {
+    maxHeapify(arr, i, heapSize);// 
   }
 }
 
-function maxHeapify(arr, index ) {//,heapSize
+function maxHeapify(arr, index, heapSize) {//
   // var iMax, iLeft, iRight;
     var iMax = index;
     var iLeft = 2 * index + 1;
@@ -43,7 +43,7 @@ function maxHeapify(arr, index ) {//,heapSize
     if (iMax !== index) {
       swap(arr, index, iMax);
       //index = iMax;
-      maxHeapify(arr, iMax);// , heapSize
+      maxHeapify(arr, iMax, heapSize);// 
     }
   //return arr;
   //do {
