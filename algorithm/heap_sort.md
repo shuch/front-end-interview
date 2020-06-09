@@ -1,13 +1,14 @@
 # 堆排序
 
 ```javascript
-
-function heapSort(arr, heapSize) {
+var heapSize;
+function heapSort(arr) {
   // 构建大顶堆
-  buildMaxHeap(arr, heapSize);
+  buildMaxHeap(arr);
   // 交换对顶元素和最后一个元素
-  for (var i = heapSize - 1; i > 0; i--) {
+  for (var i = arr - 1; i > 0; i--) {
     swap(arr, 0, i);
+    heapSize--;
     console.log('i', i);
     maxHeapify(arr, 0, i);
   }
@@ -21,7 +22,7 @@ function buildMaxHeap(arr, heapSize) {
   }
 }
 
-function maxHeapify(arr, index, heapSize) {
+function maxHeapify(arr, index ) {//,heapSize
   var iMax, iLeft, iRight;
       iMax = index;
     iLeft = 2 * index + 1;
