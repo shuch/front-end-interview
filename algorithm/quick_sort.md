@@ -44,9 +44,9 @@ function partition(arr, left, right) {
       i++;
     }
     while (arr[j] > pivot) {
-      j++;
+      j--;
     }
-    if (i >= j) {
+    if (i <= j) {
       swap(arr, i, j);
       i++;
       j--;
