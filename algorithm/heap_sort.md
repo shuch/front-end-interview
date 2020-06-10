@@ -63,4 +63,7 @@ function swap(arr, i, j) {
 
 特点
 * 时间复杂度 O(nlogn)
-* 交换节点时可能改变顺序，不稳定 
+* 交换节点时可能改变顺序，不稳定
+
+参考
+[Heapsort Implementation in JavaScript](https://forum.kirupa.com/t/heapsort-implementation-in-javascript/633430)
