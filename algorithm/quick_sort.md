@@ -1,4 +1,6 @@
 # 快速排序
+
+## 非原地
 ```javascript
 function quickSort(arr) {
   if (!arr || arr.length <= 1) {
@@ -21,6 +23,46 @@ function quickSort(arr) {
 }
 
 ```
+
+## 原地排序
+```javascript
+function quickSort(arr, left, right) {
+  if (arr.length < 2) {
+    return arr;
+  }
+  var pivotIndex = partition(arr, left, right);
+  quickSort(arr, left, pivotIndex - 1);
+  quickSort(arr, pivotIndex, right);
+}
+
+function partition(arr, left, right) {
+  var i = left;
+  var j = right;
+  var pivot = arr[Math.floor((left + right) / 2)];
+  while (i <= j) {
+    while (arr[i] < pivot) {
+      i++;
+    }
+    while (arr[j] > pivot) {
+      j++;
+    }
+    if (i >= j) {
+      swap(arr, i, j);
+      i++;
+      j--;
+    }
+  }
+  return i;
+}
+
+function swap(arr, i, j) {
+  var tmp = arr[i];
+  arr[i] = arr[j];
+  arr[j] = tmp;
+}
+
+```
+
 
 思想：
 * 取一个基准值（pivot）
