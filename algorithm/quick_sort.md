@@ -31,8 +31,13 @@ function quickSort(arr, left, right) {
     return arr;
   }
   var pivotIndex = partition(arr, left, right);
-  quickSort(arr, left, pivotIndex - 1);
-  quickSort(arr, pivotIndex, right);
+  if (left < pivotIndex - 1) {
+    quickSort(arr, left, pivotIndex - 1);
+  }
+  if (pivotIndex < right) {
+    quickSort(arr, pivotIndex, right);
+  }
+  
   return arr;
 }
 
