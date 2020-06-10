@@ -33,6 +33,7 @@ function quickSort(arr, left, right) {
   var pivotIndex = partition(arr, left, right);
   quickSort(arr, left, pivotIndex - 1);
   quickSort(arr, pivotIndex, right);
+  return arr;
 }
 
 function partition(arr, left, right) {
