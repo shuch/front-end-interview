@@ -30,6 +30,9 @@ function quickSort(arr, left, right) {
   if (arr.length < 2) {
     return arr;
   }
+  left = typeof left === 'number' ? left : 0;
+  right = typeof right === 'number' ? right : arr.length - 1;
+
   var pivotIndex = partition(arr, left, right);
   if (left < pivotIndex - 1) {
     quickSort(arr, left, pivotIndex - 1);
