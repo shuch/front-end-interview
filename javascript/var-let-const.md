@@ -15,7 +15,6 @@ a.name = 'hh' // hh
 
 ## 作用域
 * `var`存在变量提升，作用域为全局作用域
-* `let`和`const`为块级作用域，存在暂时性死区
 
 ```js
 var a = 1;
@@ -27,12 +26,26 @@ console.log(window.a1); // undefined
 console.log(window.a2); // undefined
 ```
 
+* `let`和`const`为块级作用域，存在暂时性死区
+
+```js
+{
+  let a = 1;
+  var b = 1;
+}
+console.log(a); // ReferenceError: a is not defined
+console.log(b); // 1
 ```
-let a;
-console.log(a); // undefined
-a = 10;
-console.log(a); // 10
+
+```js
+var a = 1;
+if (true) {
+  typeof a;// ReferenceError
+  let a = 2;
+}
 ```
+
+> 暂时性死区（temporary dead zone），在块级作用域内声明的变量，会绑定作用域，在声明前使用会报错，导致`typeof`运算不安全
 
 ## 重复声明
 * `var`存在变量提升，可先试用，后声明，可重复声明
