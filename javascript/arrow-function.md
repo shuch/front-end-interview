@@ -18,7 +18,7 @@ a.call(obj);// window
 ```
 
 ## prototype原型
-普通函数 `prototype` 是构造函数,而箭头函数没有 `prototype`，换而言之，箭头函数无法使用 `new` 
+普通函数 `prototype` 是构造函数，而箭头函数没有 `prototype`，换而言之，箭头函数无法使用 `new` 
 ```javascript
 function f1() {
   console.log('f1');
@@ -43,7 +43,7 @@ new f2() // Uncaught TypeError: f2 is not a constructor
 
 ```javascript
 function f3 (a) { console.log(arguments) }
-var f4 (b) { console.log(arguments) }
+var f4 = (b) => console.log(arguments)
 f3(1) // Arguments [1, callee: ƒ, Symbol(Symbol.iterator): ƒ]
 f4(1) // Uncaught ReferenceError: arguments is not defined
 ```
