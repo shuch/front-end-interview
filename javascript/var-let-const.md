@@ -19,12 +19,12 @@ a.name = 'hh' // hh
 
 ```js
 var a = 1;
-let a = 1;
-const a = 1;
+let a1 = 1;
+const a2 = 1;
 
-console.log(window.a); // 1
-console.log(window.a); // undefined
-console.log(window.a); // undefined
+console.log(window.a);  // 1
+console.log(window.a1); // undefined
+console.log(window.a2); // undefined
 ```
 
 ```
