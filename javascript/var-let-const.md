@@ -15,7 +15,9 @@ a.name = 'hh' // hh
 
 ## 作用域
 * `var`存在变量提升，作用域为全局作用域
-```javascript
+* `let`和`const`为块级作用域，存在暂时性死区
+
+```js
 var a = 1;
 let a = 1;
 const a = 1;
@@ -24,9 +26,6 @@ console.log(window.a); // 1
 console.log(window.a); // undefined
 console.log(window.a); // undefined
 ```
-
-
-* `let`和`const`为块级作用域，存在暂时性死区
 
 ```
 let a;
