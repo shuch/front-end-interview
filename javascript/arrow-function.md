@@ -39,14 +39,20 @@ new f2() // Uncaught TypeError: f2 is not a constructor
 详情参考 [JavaScript原型继承原理](https://github.com/shuch/blog/issues/11#issue-598184637)
 
 ## arguments 参数
-普通函数有 `arguments`而箭头函数没有
+普通函数有 `arguments`而箭头函数没有，取而代之箭头函数可以使用`...args`来代替`arguments`
 
 ```javascript
 function f3 (a) { console.log(arguments) }
 var f4 = (b) => console.log(arguments)
+
 f3(1) // Arguments [1, callee: ƒ, Symbol(Symbol.iterator): ƒ]
 f4(1) // Uncaught ReferenceError: arguments is not defined
+
+var f5 = (...args) => console.log(args)
+f5(1, 2) // [1, 2]
 ```
+
+> `args` 
 
 ## yield 关键字
 普通函数可以使用 `yield`，而箭头函数不可以，进而不能用作 `generators`
