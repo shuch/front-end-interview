@@ -52,7 +52,7 @@ var f5 = (...args) => console.log(args)
 f5(1, 2) // [1, 2]
 ```
 
-> `args` 
+> `args` 可以任意指定
 
 ## yield 关键字
 普通函数可以使用 `yield`，而箭头函数不可以，进而不能用作 `generators`
