@@ -15,15 +15,14 @@ a.name = 'hh' // hh
 
 ## 作用域
 * `var`存在变量提升，作用域为全局作用域
-```
+```javascript
 var a = 1;
-console.log(window.a);
-
 let a = 1;
-console.log(window.a);
-
 const a = 1;
-console.log(window.a);
+
+console.log(window.a); // 1
+console.log(window.a); // undefined
+console.log(window.a); // undefined
 ```
 
 
