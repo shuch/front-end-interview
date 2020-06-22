@@ -30,4 +30,5 @@
 * 不要重复读取计算样式(`computed styles`)，先缓存在读取
 
 ## 参考
-> css 属性变化参考https://csstriggers.com/
+* [css 属性变化](https://csstriggers.com/)
+* [dom_performance_reflow_repaint](https://gist.github.com/faressoft/36cdd64faae21ed22948b458e6bf04d5)
