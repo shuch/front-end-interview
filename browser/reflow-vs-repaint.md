@@ -1,14 +1,13 @@
 ## 重绘和回流
 * 发生在浏览器解析 `DOM Tree` 过程中
-* 回流`Reflow`计算每一个可见(visible)元素的大小和位置。
+* 回流`Reflow`计算每一个可见(visible)元素的大小和位置
 * 重绘`Repaint`把每个像素(pixels)渲染到屏幕上
 
 ## 回流(Reflow)
-* `left, right, top, bottom`位置
-* `font-size`
+* `position` 位置
+* `font-size` 字体
 * `width,height` 大小
-* `float`
-* `position`
+* `float` 浮动
 * 页面新增和删除节点
 
 上述属性发生变化，可能会引起其该节点的父节点，子节点，兄弟节点，甚至是整个文档的重新布局
