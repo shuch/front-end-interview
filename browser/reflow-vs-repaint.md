@@ -29,6 +29,8 @@
   - 先`display:none`(1 `Repaint` & 1 `Reflow`)，积累 100 个更新后，再恢复`display`，总共2 `Repaint`,2 `Reflow`
 * 不要重复读取计算样式(`computed styles`)，先缓存在读取
 
+> [代码参考](https://github.com/shuch/blog/blob/master/browser/reflow.html)
+
 ## 参考
 * [css 属性变化](https://csstriggers.com/)
 * [dom_performance_reflow_repaint](https://gist.github.com/faressoft/36cdd64faae21ed22948b458e6bf04d5)
