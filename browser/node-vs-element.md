@@ -14,10 +14,15 @@
 ## `NodeList` 和 `HTMLCollection` 区别
 跟`Node` 和 `Element` 区别一样，`NodeList` 是`Node`类型的集合，而`HTMLCollection`是`Element`类型集合
 ```js
-document.getElementsByName('div');
-// NodeList []
+// NodeList
+document.getElementsByName('div');// live
+node.querySelectorAll('li');// static
+node.childNodes
 
-document.getElementsByClassNames('body');
-// HTMLCollection []
-
+// HTMLCollection
+document.getElementsByClassName('body');
+document.getElementsByTagName('body');
+document.getElementsByClassNames('body');]
+node.children
 ```
+`HTMLCollection`是动态的，子节点变化，集合会自动更新
