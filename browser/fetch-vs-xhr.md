@@ -8,3 +8,5 @@
 * `response status` 400或500会`resove(false)`，网络异常会`reject`
 * `creditials: cors`支持跨域请求发送`cookie`，默认不会发送和接受`cookie`
 * 不支持取消请求
+
+参考[异步请求xhr、ajax、axios与fetch的区别比较](https://www.cnblogs.com/weiqinl/p/11279950.html)
