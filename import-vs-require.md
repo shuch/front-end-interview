@@ -38,7 +38,44 @@ setTimeout(() => {
 }, 2000);
 ```
 
-## 模块玄幻
+## 模块循环引用
+`commmonjs`循环引用只会引入已经执行的部分，等引入部分执行完后，在继续往下执行
+<br/>
+`a.js`
+```js
+exports.done = false;
+var b = require('./b.js');
+console.log('在 a.js 之中，b.done = %j', b.done);
+exports.done = true;
+console.log('a.js 执行完毕');
+```
+`b.js`
+```js
+exports.done = false;
+var a = require('./a.js');
+console.log('在 b.js 之中，a.done = %j', a.done);
+exports.done = true;
+console.log('b.js 执行完毕');
+```
+`main.js`
+```js
+var a = require('./a.js');
+var b = require('./b.js');
 
+console.log('在 main.js 之中, a.done=%j, b.done=%j', a.done, b.done);
+// 在 b.js 之中，a.done = false
+// b.js 执行完毕
+// 在 a.js 之中，b.done = true
+// a.js 执行完毕
+// 在 main.js 之中, a.done=true, b.done=true
+```
+过程：
+1. `main.js`执行第一行，引入`a.js`
+2. 执行`a.js`输出`done=false`执行到第二行引入`b.js`，开始执行`b.js`
+3. `b.js`引入`a.js`，循环引用，只引入`a.js`已经执行的部分`exports.done = false;`,输出`a.done=false`，继续往下执行
+4. `b.js`执行完毕，回到`a.js`继续执行，此时输出`b.done=true`，执行完毕
+5. `a.js`执行完毕，回到`main.js`，忽略第二行，输出缓存中的`a=true`和`b=true`
 
-参考[module](https://github.com/shuch/blog/tree/master/module)
+## 参考
+[Module加载实现](https://es6.ruanyifeng.com/#docs/module-loader)
+[代码实现](https://github.com/shuch/blog/tree/master/module)
