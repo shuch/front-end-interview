@@ -41,25 +41,25 @@ setTimeout(() => {
 ## 模块循环引用
 `commmonjs`循环引用只会引入已经执行的部分，等引入部分执行完后，在继续往下执行
 
-<br/>
-`a.js`
+
+
 ```js
+// a.js
 exports.done = false;
 var b = require('./b.js');
 console.log('在 a.js 之中，b.done = %j', b.done);
 exports.done = true;
 console.log('a.js 执行完毕');
-```
-`b.js`
-```js
+
+// b.js
 exports.done = false;
 var a = require('./a.js');
 console.log('在 b.js 之中，a.done = %j', a.done);
 exports.done = true;
 console.log('b.js 执行完毕');
-```
-`main.js`
-```js
+
+
+// main.js
 var a = require('./a.js');
 var b = require('./b.js');
 
@@ -70,6 +70,7 @@ console.log('在 main.js 之中, a.done=%j, b.done=%j', a.done, b.done);
 // a.js 执行完毕
 // 在 main.js 之中, a.done=true, b.done=true
 ```
+
 过程：
 1. `main.js`执行第一行，引入`a.js`
 2. 执行`a.js`输出`done=false`执行到第二行引入`b.js`，开始执行`b.js`
@@ -95,6 +96,13 @@ export let foo = 'foo'
 import { bar } from './bar'
 console.log(bar)
 ```
+
+过程：
+1. main.js引入bar
+2. bar.js 引入foo
+3. foo.js 引入bar，没有找到bar 定义，输出undefined
+4. 回到bar.js输出foo
+5. 回到
 
 ## 参考
 [Module加载实现](https://es6.ruanyifeng.com/#docs/module-loader)
