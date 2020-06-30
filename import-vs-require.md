@@ -40,6 +40,7 @@ setTimeout(() => {
 
 ## 模块循环引用
 `commmonjs`循环引用只会引入已经执行的部分，等引入部分执行完后，在继续往下执行
+
 <br/>
 `a.js`
 ```js
@@ -75,6 +76,25 @@ console.log('在 main.js 之中, a.done=%j, b.done=%j', a.done, b.done);
 3. `b.js`引入`a.js`，循环引用，只引入`a.js`已经执行的部分`exports.done = false;`,输出`a.done=false`，继续往下执行
 4. `b.js`执行完毕，回到`a.js`继续执行，此时输出`b.done=true`，执行完毕
 5. `a.js`执行完毕，回到`main.js`，忽略第二行，输出缓存中的`a=true`和`b=true`
+
+
+`es modules`循环引用在定义之前使用，可能会报错
+```js
+// bar.js
+import { foo } from './foo'
+console.log(foo);
+export let bar = 'bar'
+
+
+// foo.js
+import { bar } from './bar'
+console.log(bar);
+export let foo = 'foo'
+
+// main.js
+import { bar } from './bar'
+console.log(bar)
+```
 
 ## 参考
 [Module加载实现](https://es6.ruanyifeng.com/#docs/module-loader)
