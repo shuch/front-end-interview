@@ -98,11 +98,11 @@ console.log(bar)
 ```
 
 过程：
-1. main.js引入bar
-2. bar.js 引入foo
-3. foo.js 引入bar，没有找到bar 定义，输出undefined
-4. 回到bar.js输出foo
-5. 回到
+1. `main.js`引入`bar`
+2. `bar.js` 引入`foo`
+3. `foo.js` 引入`bar`，没有找到`bar` 定义，输出`undefined`
+4. 回到`bar.js`输出`foo`
+5. 回到`main.js`输出`bar`
 
 ## 参考
 [Module加载实现](https://es6.ruanyifeng.com/#docs/module-loader)
