@@ -105,5 +105,6 @@ console.log(bar)
 5. 回到`main.js`输出`bar`
 
 ## 参考
-[Module加载实现](https://es6.ruanyifeng.com/#docs/module-loader)
-[代码实现](https://github.com/shuch/blog/tree/master/module)
+* [CommonJS 和 ES6 Module 究竟有什么区别？](https://juejin.im/post/5e5f10176fb9a07cd443c1e2)
+* [Module加载实现](https://es6.ruanyifeng.com/#docs/module-loader)
+* [代码实现](https://github.com/shuch/blog/tree/master/module)
