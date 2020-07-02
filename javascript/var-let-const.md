@@ -52,6 +52,8 @@ if (true) {
 * 使用`var`声明的变量会在预编译阶段分配栈内存，而`let`和`const`不会
 * 如果`let`和`const`存储的是引用类型，则会在堆内存开辟空间，在变量中存储的是堆内存地址
 
+## 参考
+[ES6之let（理解闭包）和const命令](https://www.cnblogs.com/zhuzhenwei918/p/6131345.html)
 
 
 
