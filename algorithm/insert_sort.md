@@ -8,7 +8,7 @@ function insertSort(arr) {
   
   var len = arr.length;
   for (var i = 1; i < len; i++) {// 无序区
-    var temp = arr[i];
+    var temp = arr[i];// 待插入项
     for (var j = i - 1; j >= 0; j--) {// 有序区：从大往小比较
       if (arr[j] > temp) { // 找到比要插入值大的元素，往后移动
         arr[j+1] = arr[j];
