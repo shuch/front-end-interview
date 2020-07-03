@@ -10,13 +10,13 @@ function insertSort(arr) {
   for (var i = 1; i < len; i++) {// 无序区
     var temp = arr[i];
     for (var j = i - 1; j >= 0; j--) {// 有序区：从大往小比较
-      if (arr[j] > temp) { // 找到比要插入值大的元素，交换顺序
+      if (arr[j] > temp) { // 找到比要插入值大的元素，往后移动
         arr[j+1] = arr[j];
       } else { // 如果插入的值比上个值大，证明有序，退出循环
         break;
       }
     }
-    arr[j+1] = temp;
+    arr[j+1] = temp;// 将值插入
   }
   
   return arr;
