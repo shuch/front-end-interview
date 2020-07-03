@@ -16,7 +16,7 @@ function insertSort(arr) {
         break;
       }
     }
-    arr[j] = temp;
+    arr[j+1] = temp;
   }
   
   return arr;
