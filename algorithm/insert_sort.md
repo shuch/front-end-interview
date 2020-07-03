@@ -8,14 +8,14 @@ function insertSort(arr) {
   
   var len = arr.length;
   for (var i = 1; i < len; i++) {// 无序区
+    var temp = arr[i];
     for (var j = i; j > 0; j--) {// 有序区：从大往小比较
       if (arr[j] < arr[j-1]) { // 找到比要插入值大的元素，交换顺序
-        var temp = arr[j];
-        arr[j] = arr[j-1];
-        arr[j-1] = temp;
+        arr[j-1] = arr[j];
       } else { // 如果插入的值比上个值大，证明有序，退出循环
         break;
       }
+      arr[j] = temp;
     }
   }
   
