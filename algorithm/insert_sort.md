@@ -15,8 +15,8 @@ function insertSort(arr) {
       } else { // 如果插入的值比上个值大，证明有序，退出循环
         break;
       }
-      arr[j] = temp;
     }
+    arr[j] = temp;
   }
   
   return arr;
