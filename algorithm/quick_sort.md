@@ -13,13 +13,13 @@ function quickSort(arr) {
   var pivot = arr.splice(pivotIndex, 1)[0];
   for (var i = 0; i < arr.length; i++) {
     if (arr[i] < pivot) {
-      right.push(arr[i]);
-    } else {
       left.push(arr[i]);
+    } else {
+      right.push(arr[i]);
     }
   }
   
-  return quickSort(right).concat([pivot], quickSort(left));
+  return quickSort(left).concat([pivot], quickSort(right));
 }
 
 ```
