@@ -47,3 +47,6 @@ rangeGen.next(); // { value: undefined, done: true }
 
 
 ```
+
+## 参考
+[迭代器和生成器](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Iterators_and_Generators)
