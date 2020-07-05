@@ -30,6 +30,43 @@ class Promise {
 }
 ```
 
+## `promise.all`
+
+```js
+function promiseAll(promises = []) {
+  let result = [];
+  function check(resolve) {
+    let length = result.length;
+    if (length === promises.length) {
+      resolve(result);
+    }
+  }
+  return new Promise(resolve => {
+    for (let  i = 0; i < promises.length; i++) {
+      let promise = promises[i];
+      promise.then(res => {
+        result[i] = res;
+        check(resolve);
+      });
+    }
+  })
+}
+
+let promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('定时器1')
+  }, 3000)
+});
+
+let promise2 = new Promise(resolve => {
+  setTimeout(() => {
+    resolve('定时器2')
+  }, 2000);
+})
+promiseAll([promise1, promise2]).then(res => console.log('res', res))
+// res ["定时器1", "定时器2"]
+```
+
 
 ## 题目一
 
