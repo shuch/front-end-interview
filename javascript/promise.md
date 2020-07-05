@@ -1,3 +1,35 @@
+## `promise` 实现
+```js
+class Promise {
+  constructor(fn) {
+    fn(this.resolve.bind(this));
+  }
+
+  callbacks = [];
+  state = 'pending';
+  value = null;
+
+  resolve(value) {
+    // 发布
+    this.state = 'fulfilled';
+    this.value = value;
+    this.callbacks.forEach(cb => cb(value));
+  }
+  
+  then(callback) {
+    // 订阅
+    if (this.state === 'pending') {
+      this.callbacks.push(callback);
+    } else {
+      callback(this.value);
+    }
+    
+    return this;
+  }
+
+}
+```
+
 ## 题目一
 
 ```
