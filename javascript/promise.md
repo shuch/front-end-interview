@@ -35,12 +35,14 @@ class Promise {
 ```js
 function promiseAll(promises = []) {
   let result = [];
+
   function check(resolve) {
     let length = result.length;
     if (length === promises.length) {
       resolve(result);
     }
   }
+
   return new Promise((resolve, reject) => {
     for (let i = 0; i < promises.length; i++) {
       let promise = promises[i];
@@ -65,8 +67,14 @@ let promise2 = new Promise(resolve => {
     resolve('定时器2')
   }, 2000);
 })
+
+let promise3 = new Promise.reject('err');
+
 promiseAll([promise1, promise2]).then(res => console.log('res', res))
 // res ["定时器1", "定时器2"]
+
+promiseAll([promise1, promise2, promise3]).then(res => console.log('res', res))
+// Promise {<rejected>: "err"}
 ```
 
 
