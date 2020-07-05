@@ -8,6 +8,7 @@ Person.prototype === p.__proto__; // true
 ```
 
 ## `prototype`和`constructor`关系
+原型的构造器属性是构造函数本身
 ```js
 function Person() {}
 
