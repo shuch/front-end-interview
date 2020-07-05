@@ -27,3 +27,6 @@ class User() {}
 Person.toString();// "function Person() {}"
 User.toString();// "class User() {}"
 ```
+
+## 参考
+[Class basic syntax](https://javascript.info/class)
