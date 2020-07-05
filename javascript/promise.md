@@ -42,14 +42,14 @@ function promiseAll(promises = []) {
     }
   }
   return new Promise((resolve, reject) => {
-    for (let  i = 0; i < promises.length; i++) {
+    for (let i = 0; i < promises.length; i++) {
       let promise = promises[i];
       promise.then(res => {
         result[i] = res;
         check(resolve);
-      }, rej => {
+      }).catch(rej) => {
         reject(rej);
-      });
+      };
     }
   })
 }
