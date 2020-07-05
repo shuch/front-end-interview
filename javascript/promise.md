@@ -30,6 +30,7 @@ class Promise {
 }
 ```
 
+
 ## 题目一
 
 ```
@@ -55,3 +56,8 @@ Promise.then()或 Promise.catch() 参数有两个特点：
 后面的`then`也无法接受到值。
 
 * `then` 第一个函数抛出异常，第二个参数捕获不到，但 `catch` 可以捕获到
+
+
+
+## 参考
+[图解 Promise 实现原理（一）—— 基础实现](https://zhuanlan.zhihu.com/p/58428287)
