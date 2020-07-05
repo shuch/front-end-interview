@@ -49,7 +49,7 @@ function promiseAll(promises = []) {
       promise.then(res => {
         result[i] = res;
         check(resolve);
-      }).catch(rej) => {
+      }).catch(rej => {
         reject(rej);
       };
     }
