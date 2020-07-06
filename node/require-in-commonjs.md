@@ -33,7 +33,7 @@ function req(mod) {
 ```js
 exports.name = 'this is module a.js';
 ```
-使用
+引用模块`a.js`
 ```js
 let a = req('./a.js');
 console.log(a.name);// this is module a.js
