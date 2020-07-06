@@ -40,3 +40,8 @@ console.log(a.name);// this is module a.js
 ```
 
 [源代码](https://github.com/shuch/blog/blob/master/module/commonjs/require/customer_require.js)
+
+## 参考
+* [JavaScript模块化原理浅析](https://juejin.im/post/5c1083186fb9a049ec6aed5e)
+* [你真的懂模块化吗](https://juejin.im/post/5b67c342e51d45172832123d)
+* [深入 CommonJs 与 ES6 Module](https://segmentfault.com/a/1190000017878394)
