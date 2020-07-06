@@ -4,11 +4,13 @@
 ## 递归版
 ```js
 function binarySearch(arr, left, right, target) {
-  let midIndex = Math.floor((left + right) / 2);
+
   if (left > right) {
       return -1;
   }
+  let midIndex = Math.floor((left + right) / 2);
   let mid = arr[midIndex];
+
   if (target < mid) {
     return binarySearch(arr, left, midIndex - 1, target);
   }
