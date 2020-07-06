@@ -9,21 +9,24 @@ function req(mod) {
   const content = fs.readFileSync(filename, 'utf8');
   
   // 包装一个函数
-  let fn = new Function(
+  const fn = new Function(
     'exports',
     'require',
     'module',
     '__filename',
     '__dirname',
-    content + '/n return module.exports;'
+    content,
   );
   
   // 创建 module
-  let module = {
+  const module = {
     exports: {},
   };
   
-  return fn(module.exports, req, module, __filename, __dirname);
+  // 执行 module
+  fn(module.exports, req, module, __filename, __dirname);
+
+  return module.exports;
 }
 
 ```
