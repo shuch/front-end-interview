@@ -20,8 +20,8 @@ function binarySearch(arr, left, right, target) {
 }
 
 var a = [1, 2, 3, 4, 5, 6];
-binarySearch(a, 0, 5, 5)
-// 4
+binarySearch(a, 0, 5, 5);// 4
+binarySearch(a, 0, 5, 8);// -1
 ```
 
 
