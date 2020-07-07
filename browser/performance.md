@@ -9,7 +9,10 @@
 ```html
 <html>
   <head>
-    <script>window.pageStart = new Date()</script>
+    <script>
+      // 不支持 performance.timing 兼容ie8以后的浏览器
+      window.pageStart = new Date();
+    </script>
     <link rel="stylesheet" href="style.css" />
     <script>
       window.firstPaint = new Date();
@@ -31,12 +34,22 @@
   <body>
     <div>第一屏</div>
     <script>
-      window.firstPaint = new Date();
-      var fistPageTime = pageStart - firstPaint;
+      window.firstPage = new Date();
+      var fistPageTime = pageStart - firstPage;
     </script>
     <div>第二屏</div>
     <div>第三屏</div>
   </body>
 </html>
 
+```
+
+## `performance` API
+若考虑`DNS`查找和`TCP`连接时间，则使用
+```js
+// 计算白屏时间
+var whiteTime = pageStart - performance.timing.navigationStart;
+
+// 计算首屏时间
+var whiteTime = firstPage - performance.timing.navigationStart;
 ```
