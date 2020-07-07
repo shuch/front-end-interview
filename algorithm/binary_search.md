@@ -48,3 +48,6 @@ binarySearch2(a, 0, 5, 5);// 4
 
 ## 特点
 * 时间复杂度 O(logn)
+
+## 参考
+[二分查找](https://segmentfault.com/a/1190000008584438)
