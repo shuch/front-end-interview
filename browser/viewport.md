@@ -13,3 +13,7 @@
 
 ## 最大缩放比
 如果不希望用户缩放，设置最大缩放比为1
+
+## 参考
+* [Understanding The Viewport Meta Tag](https://paulund.co.uk/understanding-the-viewport-meta-tag)
+* [understanding-viewport](http://andreasbovens.github.io/understanding-viewport/)
