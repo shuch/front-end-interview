@@ -39,5 +39,6 @@ b.prop = null;
 var a = {}; // 引用类型，引用次数为 0
 var wm = new WeakMap();
 wm.set(a, 'object');  // 垃圾回收机制不考虑 wm 对 a 的引用
-a = null;// 引用次数为 0，可以回收 a
+a = null;// 引用次数为 0，回收 a
+wm.get(a)// undefined
 ```
