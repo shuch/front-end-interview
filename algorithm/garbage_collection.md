@@ -5,7 +5,7 @@
 ## 引用计数法
 ```js
 function count() {
-  const a = {};// 应用类型变量，引用次数为0
+  const a = {};// 引用类型变量，引用次数为0
   let b = a;   // a的引用次数变为1
   let c = a;   // a的引用次数变为2
   b = {};      // b不再引用a a引用次数减1
@@ -13,8 +13,8 @@ function count() {
 }
 ```
 
-## 标记清除法
-为了解决循环引用无法清除的问题，引入标记清除法
+循环引用问题
+
 ```js
 function loop() {
   let a = {};
@@ -28,4 +28,16 @@ function loop() {
 ```js
 a.prop = null;
 b.prop = null;
+```
+
+## 标记清除法
+为了解决循环引用无法清除的问题，引入标记清除法
+
+## 处理内存泄漏
+`WeakMap`和`WeakSet`存储键值对，垃圾回收机制不考虑`WeakMap`和`WeakSet`本身的引用，只要存储的对象引用消失，对象就可以被垃圾回收。
+```js
+var a = {}; // 引用类型，引用次数为 0
+var wm = new WeakMap();
+wm.set(a, 'object');  // 垃圾回收机制不考虑 wm 对 a 的引用
+a = null;// 引用次数为 0，可以回收 a
 ```
