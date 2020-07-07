@@ -15,3 +15,17 @@ function count() {
 
 ## 标记清除法
 为了解决循环引用无法清除的问题，引入标记清除法
+```js
+function loop() {
+  let a = {};
+  let b = {};
+  a.prop = b;
+  b.prop = a;// 循环引用，永远不会清零
+}
+
+```
+手动释放引用
+```js
+a.prop = null;
+b.prop = null;
+```
