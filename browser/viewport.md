@@ -27,6 +27,9 @@ document.documentElement.clientWidth
 document.documentElement.clientHeight
 ```
 
+## 思考
+`1px` [问题](https://www.quirksmode.org/mobile/viewports.html)
+
 ## 参考
 * [Understanding The Viewport Meta Tag](https://paulund.co.uk/understanding-the-viewport-meta-tag)
 * [understanding-viewport](http://andreasbovens.github.io/understanding-viewport/)
