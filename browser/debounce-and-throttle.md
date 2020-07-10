@@ -2,6 +2,8 @@
 控制某个事件触发的频率
 
 ## 防抖`debounce`
+在多次触发某一个函数时，以最后一次触发时间为准，延迟执行一次。
+
 ```js
 function debounce(fn, delay, immediate) {
   var timer;
@@ -35,7 +37,7 @@ const betterFn = debounce(() => console.log('fn 防抖执行了'), 1000)
 ```
 
 ## 节流`throttle`
-跟防抖不同，节流是在某一个时间点后，确保执行一次。
+跟防抖不同，节流是在某一个时间段，确保函数执行一次。
 
 ```js
 function throttle(fn, delay) {
