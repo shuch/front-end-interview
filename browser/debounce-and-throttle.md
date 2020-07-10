@@ -40,22 +40,23 @@ const betterFn = debounce(() => console.log('fn 防抖执行了'), 1000)
 跟防抖不同，节流是在某一个时间段，确保函数执行一次。
 
 ```js
-function throttle(fn, delay) {
-  var startTime = +new Date();
+function throttle(fn, threshold) {
+  var startTime;
   var timer;
 
   return function() {
     var curTime = +new Date();
-    clearTimeout(timer);
-
+    
     /* 1 */
-    if (curTime - startTime >= delay) {
+    if (curTime - startTime >= threshold) {
       fn.apply(this, arguments);
       startTime = curTime;
     } else {
       /* 2 */
+      clearTimeout(timer);
       timer = setTimeout(function() {
         fn.apply(this, arguments);
+        startTime = curTime;
       }, delay);
     }
   }
