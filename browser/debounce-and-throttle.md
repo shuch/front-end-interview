@@ -6,11 +6,12 @@
 function debounce(fn, delay, immediate) {
   var timer;
   return function() {
+    /* 1 */
     var context = this;
     var args = arguments;
     clearTimeout(timer);
 
-    /* 1 */
+    /* 2 */
     if (immediate && !timer) {
       fn.apply(context, args);
     }
@@ -23,7 +24,8 @@ function debounce(fn, delay, immediate) {
 
 ```
 说明
-1. 为了实现第一次触发事件就执行函数，加了`immdiate`
+1. 缓存函数运行时的调用的`this`
+2. 为了实现第一次触发事件就执行函数，加了`immdiate`
 
 测试
 ```js
@@ -37,15 +39,26 @@ const betterFn = debounce(() => console.log('fn 防抖执行了'), 1000)
 
 ```js
 function throttle(fn, delay) {
-  var startTime = 0;
+  var startTime = new Date();
   
   return function() {
     var curTime = Date.now();
+    /* 1 */
     if (curTime - startTime > delay) {
       fn.apply(this, arguments);
       startTime = curTime;
+    } else {
+      /* 2 */
+      setTimeout(function() {
+        fn.apply(this, arguments);
+        startTime = curTime;
+      }, delay);
     }
   }
 }
 
 ```
+
+说明：
+1. 当函数调用距离上一次的时间间隔大于`delay`时，执行函数。
+2. 若只调用了一次，确保函数在`delay`后执行。
