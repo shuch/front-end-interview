@@ -70,3 +70,6 @@ function throttle(fn, delay) {
 ## 应用
 * 浏览器的高频事件`resize, scroll, touchmove, mousemove`
 * 用户触发事件`input onchange`搜索
+
+## 参考
+* [Debounce 和 Throttle 的原理及实现](https://cloud.tencent.com/developer/article/1437184)
