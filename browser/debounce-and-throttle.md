@@ -44,7 +44,7 @@ function throttle(fn, delay) {
   return function() {
     var curTime = Date.now();
     /* 1 */
-    if (curTime - startTime > delay) {
+    if (curTime - startTime >= delay) {
       fn.apply(this, arguments);
       startTime = curTime;
     } else {
@@ -60,5 +60,5 @@ function throttle(fn, delay) {
 ```
 
 说明：
-1. 当函数调用距离上一次的时间间隔大于`delay`时，执行函数。
+1. 当函数调用距离上一次的时间间隔大于等于`delay`时，执行函数。
 2. 若只调用了一次，确保函数在`delay`后执行。
