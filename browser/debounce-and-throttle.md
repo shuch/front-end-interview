@@ -39,17 +39,20 @@ const betterFn = debounce(() => console.log('fn 防抖执行了'), 1000)
 
 ```js
 function throttle(fn, delay) {
-  var startTime = new Date();
-  
+  var startTime = +new Date();
+  var timer;
+
   return function() {
-    var curTime = Date.now();
+    var curTime = +new Date();
+    clearTimeout(timer);
+
     /* 1 */
     if (curTime - startTime >= delay) {
       fn.apply(this, arguments);
       startTime = curTime;
     } else {
       /* 2 */
-      setTimeout(function() {
+      timer = setTimeout(function() {
         fn.apply(this, arguments);
         startTime = curTime;
       }, delay);
