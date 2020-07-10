@@ -46,14 +46,14 @@ function throttle(fn, threshold) {
 
   return function() {
     var curTime = +new Date();
-    
+    clearTimeout(timer); 
+
     /* 1 */
     if (curTime - startTime >= threshold) {
       fn.apply(this, arguments);
       startTime = curTime;
     } else {
       /* 2 */
-      clearTimeout(timer);
       timer = setTimeout(function() {
         fn.apply(this, arguments);
         startTime = curTime;
