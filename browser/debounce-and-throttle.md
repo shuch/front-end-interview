@@ -57,7 +57,7 @@ function throttle(fn, threshold) {
       timer = setTimeout(function() {
         fn.apply(this, arguments);
         startTime = curTime;
-      }, delay);
+      }, threshold);
     }
   }
 }
