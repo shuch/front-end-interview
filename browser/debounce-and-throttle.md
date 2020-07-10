@@ -1,5 +1,5 @@
 ## 防抖和节流
-控制某个事件触发的频率
+控制事件触发的频率
 
 ## 防抖`debounce`
 在多次触发某一个函数时，以最后一次触发时间为准，延迟执行一次。
@@ -67,3 +67,7 @@ function throttle(fn, delay) {
 说明：
 1. 当函数调用距离上一次的时间间隔大于等于`delay`时，执行函数。
 2. 若只调用了一次，确保函数在`delay`后执行。
+
+## 应用
+* 浏览器的高频事件`resize, scroll, touchmove, mousemove`
+* 用户触发事件`input onchange`搜索
