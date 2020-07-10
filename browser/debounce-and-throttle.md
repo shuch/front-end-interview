@@ -5,16 +5,18 @@
 ```js
 function debounce(fn, delay, immediate) {
   var timer;
-  return function(...args) {
+  return function() {
+    var context = this;
+    var args = arguments;
     clearTimeout(timer);
 
     /* 1 */
     if (immediate && !timer) {
-      fn.apply(this, args);
+      fn.apply(context, args);
     }
 
-    timer = setTimeout(() => {
-      fn.apply(this, args);
+    timer = setTimeout(function() {
+      fn.apply(context, args);
     }, delay);
   }
 }
