@@ -27,7 +27,7 @@ function debounce(fn, delay, immediate) {
 ```
 说明
 1. 缓存函数运行时的调用的`this`
-2. 为了实现第一次触发事件就执行函数，加了`immdiate`
+2. 为了实现第一次触发事件就执行函数，加了<font style="color: #0ABF5B">immdiate</font>
 
 测试
 ```js
