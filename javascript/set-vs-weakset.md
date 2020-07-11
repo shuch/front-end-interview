@@ -25,3 +25,6 @@ WeakSet
 * `set`内容不重复
 * `set`和`map`健值是任意类型，`weakset`和`weakmap`健值是引用类型
 * `weak*`都是弱引用，利于垃圾回收。
+
+## 参考
+[介绍下 Set、Map、WeakSet 和 WeakMap 的区别？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/6)
