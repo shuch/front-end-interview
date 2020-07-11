@@ -14,7 +14,7 @@ WeakSet
 * 可以遍历
 
 `WeakMap`
-* `WeakMap`健名是一个非空(null)对象，解决了`Object`同名属性冲突问题`clash`。
+* `WeakMap`健名是一个非空(`null`)对象，解决了`Object`同名属性冲突问题`clash`。
 * `WeakMap`健是弱引用对象，一旦除`Weakmap`之外的引用消失，会自动被回收，避免内存泄漏。
 * 不能遍历
 
