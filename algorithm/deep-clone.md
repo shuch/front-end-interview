@@ -96,3 +96,6 @@ b.b // {type: 1}
 * `JSON`深克隆简单，但无法保证对象子类型`function,array`
 * 深度优先遍历可以克隆所有的对象，当嵌套层数过大，容易出现调用栈溢出
 * 广度优先遍历可以解决递归调用栈过大的问题
+
+## 参考
+[面试题之-深拷贝](https://sobird.me/interview-question-deepclone.htm)
