@@ -23,3 +23,6 @@ function breadthFirstSearch(node) {
 }
 
 ```
+
+## 参考
+[介绍下深度优先遍历和广度优先遍历，如何实现？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/9)
