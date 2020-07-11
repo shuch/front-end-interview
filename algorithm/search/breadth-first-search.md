@@ -3,7 +3,7 @@
 
 
 ```js
-function widthFirstSearch(node) {
+function breadthFirstSearch(node) {
   var nodes = [];
   var queue = [node];
   
