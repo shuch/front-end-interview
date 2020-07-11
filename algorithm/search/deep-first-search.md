@@ -1,7 +1,7 @@
 ## 深度优先遍历
 深度优先遍历就是先序遍历，属于树的纵向搜索。
 
-非递归法
+非递归采用栈的形式实现
 
 ```js
 function deepFirstSearch(root) {
@@ -23,8 +23,6 @@ function deepFirstSearch(root) {
   return results;
 }
 ```
-
-非递归采用栈的形式实现
 
 递归法
 ```js
