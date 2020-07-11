@@ -1,15 +1,20 @@
 # 深克隆
+方法一：
 
-深度优先遍历
+```js
+JSON.parse(JSON.stringfy(obj));
+```
+
+方法二：深度优先遍历
 ```js
 function deepclone(target) {
+  if (typeof target !== 'object') {
+    return target;
+  }
+
   const obj = {};
  
-  if (target instanceof Date) {
-    return new Date(target);
-  }
- 
-  for (attr in target) {
+  for (var attr in target) {
     if (target.hasOwnProperty(attr)) {
       if (typeof target[attr] === 'object') {
         obj[attr] = deepclone(target[attr]);
@@ -26,9 +31,31 @@ function deepclone(target) {
 
 ```
 
-广度优先遍历：
+方法三：广度优先遍历：
 ```js
+function deepCloneBfs(target) {
+  var res = {};
+  var copyQueue = [res];
+  var nodeQueue = [target];
 
+  while (nodeQueue.length) {
+    var node = nodeQueue.shift();
+    var copy = copyQueue.shift();
+    
+    for (var attr in node) {
+      var value = node[attr];
+      if (typeof value === 'object') {
+        nodeQueue.push(value);
+        copy[attr] = {};
+        copyQueue.push(copy[attr]);
+      } else {
+        copy[attr] = value;
+      }
+    }
+  }
+
+  return res;
+}
 
 ```
 
@@ -59,9 +86,10 @@ b.b // {type: 1}
 ```
 
 ## 问题
-* 如果一个对象有循环引用，则递归会进入死循环，引起爆栈错误。如`obj.b.a = b`
-  可以引入`visitArr`缓存克隆过的`attr`，存在就使用缓存。
-* 边界问题，还有`object`类型数据，如`regex,`没有处理
+* 如果一个对象有循环引用，则递归会进入死循环，引起调用栈溢出错误。如`var a = {}; a.b = a;`
+  - `hash`表：引入`visitedArr`数组，缓存克隆过的`attr`，存在就使用缓存。
+  - 同时解决引用丢失问题：两个属性引用同一个对象
+* 边界问题，如`array, regex, symbol`没有处理，`es6`新引入`set,map`
 
 
 
