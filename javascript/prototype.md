@@ -1,6 +1,6 @@
 
 ### 题目一
-```
+```js
 Object.prototype.a = function () {
     console.log('a')
 }
@@ -21,7 +21,7 @@ F.b(); // b
 #### 解析:
 1. 先展开 `f` 的原型链
 
-```
+```js
 f.__proto__ === F.prototype
 
 因为 F.prototype 是一个对象，继承自Object，所以 F.prototype.__proto__ === Object.prototype，由此
@@ -33,7 +33,7 @@ f.__proto__.__proto__ === Object.prototype
 
 2. 展开 `F` 原型链
 
-```
+```js
 所有function 实例都继承自Function
 F.__proto__ === Function.prototype
 
@@ -49,14 +49,14 @@ F.__proto__.__proto__ === Object.prototype
 根据上面的条件`Object.a() Object.b() Function.a() Function.b()`会输出什么
 
 分析：
-```
+```js
 Object是一个函数，继承自 Function, 所以
 Object.__proto__ === Function.prototype;
 而 Function 也是一个函数，继承自己 
 Function.__proto__ === Function.prototype
 ```
 你会发现：
-```
+```js
 Object.a -> Object.__proto__.__proto__.a，
 Object.b -> Object.__proto__.b，
 Funtion.a -> Function.__proto__.__proto__.a
@@ -64,7 +64,7 @@ Funtion.b -> Function.__proto__.b
 ```
 
 #### 追问2
-```
+```js
 var c = 1;
 console.a();// a
 console.b();// console.b is not a function
@@ -74,7 +74,7 @@ console.log.a();// a
 console.log.b();// b
 ```
 解析：
-```
+```js
 console 是一个对象，继承自 Object, console.__proto__ === Object.prototype
 
 c 是一个基本数据类型的实例，继承自 Number, 那么 c.__proto__ === Number.prototype, 
