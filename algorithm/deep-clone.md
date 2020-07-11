@@ -1,4 +1,6 @@
 # 深克隆
+
+深度优先遍历
 ```js
 function deepclone(target) {
   const obj = {};
