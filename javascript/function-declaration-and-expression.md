@@ -9,6 +9,23 @@ function f() {}
 var f = function() {}
 ```
 
+### IIFE
+立即执行函数表达式（`Immediately Invoke Fucntion Expression`）
+```js
+(function IIFE() {})()
+```
+
+* 当把函数声明用括号包裹，就变成函数表达式。
+* 函数表达式里，对函数重命名会静默失败。`'use strict'`模式报错。
+
+```js
+var a = 2;
+(function a() {
+  a = 2;// 失败
+  console.log(a);// 打印 function a() {...}
+})();
+```
+
 ## 比较
 * 作用均是声明一个变量`f`并初始化值为 function {}
 * 函数声明存在变量提升(hoist)，而表达式不会
