@@ -1,4 +1,4 @@
-## `XXS`
+## `XSS`
 * 跨站脚本攻击（`Cross Site Script`）区别于`css`(`Cascade Style Sheet`)
 * 通过输入注入`script`，运行恶意代码
 
@@ -16,7 +16,7 @@
 * 设置`secure`，在`https header`中发送`cookie`
 
 
-## `csrf`
+## `CSRF`
 * 跨站请求伪造（`cross site request forgery`）
 * 在登录网站A的情况下，访问第三方恶意网站B，冒充正常用户发起A请求
 
