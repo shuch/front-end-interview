@@ -76,3 +76,6 @@ f1()
 * 函数声明在解析时，存在变量提升，提前定义并赋值
 * 函数表达式在运行时，定义并赋值
 
+
+## 参考
+[下面的代码打印什么内容，为什么](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/48)
