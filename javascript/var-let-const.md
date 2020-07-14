@@ -25,6 +25,7 @@ console.log(window.a);  // 1
 console.log(window.a1); // undefined
 console.log(window.a2); // undefined
 ```
+> a1,a2存在于`Script`作用域，独立于`Global`之外。
 
 * `let`和`const`为块级作用域，存在暂时性死区
 
