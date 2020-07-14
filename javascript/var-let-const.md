@@ -17,15 +17,24 @@ a.name = 'hh' // hh
 * `var`存在变量提升，作用域为全局作用域
 
 ```js
-var a = 1;
-let a1 = 1;
-const a2 = 1;
+var a = 1;// Global
+let b = 2;// Script
+const c = 3; // Script
 
-console.log(window.a);  // 1
-console.log(window.a1); // undefined
-console.log(window.a2); // undefined
+{
+  var aa = 11;// Global
+  let bb = 22;// Block
+  const cc = 33;// Block
+  {
+    var aaa = 111;// Global
+    let bbb = 222;// Block
+    const ccc = 333;// Block
+  }
+}
 ```
-> a1,a2存在于`Script`作用域，独立于`Global`之外。
+
+  -  `var` 声明在`Glabal`
+  -  `let`和`const` 声明在`Block`，顶层`Block`称为`Script`
 
 * `let`和`const`为块级作用域，存在暂时性死区
 
