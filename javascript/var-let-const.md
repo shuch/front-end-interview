@@ -65,6 +65,7 @@ if (true) {
 ## 参考
 * [for 循环闭包](https://github.com/shuch/blog/tree/master/scope/block)
 * [ES6之let（理解闭包）和const命令](https://www.cnblogs.com/zhuzhenwei918/p/6131345.html)
+* [关于 const 和 let 声明的变量不在 window 上](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/30)
 
 
 
