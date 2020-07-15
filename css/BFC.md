@@ -13,7 +13,7 @@
   - `inline-block`
   - `display: table`
   - `display: grid`
-  - `display: flow-roow`
+  - `display: flow-root`
     
 * `overflow`不是默认的`visible`属性
 * `contain`
