@@ -2,7 +2,7 @@
 块级格式上下文（`Block Format Context`）
 
 #### 作用
-* 清除浮动`float`
+* 阻止被浮动元素覆盖
 * 防止`margin`重叠
 
 #### 生成
