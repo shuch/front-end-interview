@@ -9,8 +9,8 @@
 * `html`根元素
 * `position: absolute`，`position: fixed`
 * `display`
-  - `flex`
-  - `inline-block`
+  - `display: flex`
+  - `display: inline-block`
   - `display: table`
   - `display: grid`
   - `display: flow-root`
