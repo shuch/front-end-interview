@@ -1,4 +1,5 @@
 ## 数组扁平化
+递归法：
 ```js
 function flatArray(arr, list = []) {
   for (var i = 0; i < arr.length; i++) {
@@ -10,6 +11,22 @@ function flatArray(arr, list = []) {
     }  
   }
   return list;
+}
+```
+迭代法：
+```js
+function flatten(arr) {
+  var newArr = [...arr];
+  var res = [];
+  while(newArr.length) {
+    var item = newArr.shift();
+    if (Array.isArray(item)) {
+      newArr.push(...item);
+    } else {
+      res.push(item);
+    }
+  }
+  return res;
 }
 ```
 另外两种方式：
