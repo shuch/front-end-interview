@@ -1,5 +1,8 @@
 ## `BFC`
-块级格式上下文（`Block Format Context`）
+块级格式上下文（`Block Format Context`），同级别还有行级格式上下文（`Inline Format Context`）
+
+* 块级格式上下文内的元素，竖着排列
+* 行级格式上下文内的元素，横着排列
 
 #### 作用
 * 阻止被浮动元素覆盖 [demo](https://4gb7w.csb.app/)
