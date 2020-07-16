@@ -1,5 +1,5 @@
 ## `BFC`
-块级格式上下文（`Block Format Context`），同级别还有行级格式上下文（`Inline Format Context`）
+块级格式上下文（`Block Format Context`），同级别还有行级格式上下文（`Inline Format Context`），用于决定盒子布局以及浮动影响范围的一个区域。
 
 * 块级格式上下文内的元素，竖着排列
 * 行级格式上下文内的元素，横着排列
