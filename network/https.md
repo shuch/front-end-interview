@@ -17,3 +17,6 @@
 * 保密性：非对称加密协商秘钥，对称加密传输密文
 * 合法性：`ca`证书验证数字签名，公钥合法性
 * 完整性：利用单向`hash`算法，得到定长`hash`值
+
+## 参考
+[一次安全可靠的通信——HTTPS原理](https://developers.weixin.qq.com/community/develop/article/doc/000046a5fdc7802a15f7508b556413)
