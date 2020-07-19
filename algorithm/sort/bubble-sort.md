@@ -39,6 +39,26 @@ console.log(bubbleSort(arr));// 1,2,3,4,5
 
 改进：
 * 在一轮排序完成后，没有元素位置交换，可以认为是有序的，提前退出循环
+* 记录每轮交换的位置，作为下次比较的终点，减少已经排好序的冒泡。
+
+```js
+function bubbleSort(arr) {
+ var i = arr.length;
+ while (i > 0) {
+  var pos = 0;
+  for (var j = 0;j < i; j++) {
+    if (arr[j] > arr[j+1]) {
+      var tmp = arr[j];
+      arr[j] = arr[j+1];
+      arr[j+1] = tmp;
+      pos = i;
+    }
+  }
+ }
+ return arr;
+}
+
+```
 
 特点：
 * 平均时间复杂度 O(n<sup>2</sup>)
