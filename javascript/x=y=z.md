@@ -49,6 +49,9 @@ console.log(b.x);// {n:2}
 
 最后的状态是`a`指向变为`0x2`，`b`指向没有变还是`0x2`
 
+## 思考
+把题目的第三行换成`b.x = a = {n:2}`效果一样，更容易理解。
+
 ## 参考
 * [运算符优先级](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Operators/Operator_Precedence)
 * [一道赋值面试题引发的思考](https://juejin.im/post/5b605473e51d45191a0d81d8)
