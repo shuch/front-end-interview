@@ -43,19 +43,20 @@ console.log(bubbleSort(arr));// 1,2,3,4,5
 
 ```js
 function bubbleSort(arr) {
- var i = arr.length;
- while (i > 0) {
-  var pos = 0;
-  for (var j = 0;j < i; j++) {
-    if (arr[j] > arr[j+1]) {
-      var tmp = arr[j];
-      arr[j] = arr[j+1];
-      arr[j+1] = tmp;
-      pos = i;
+  var i = arr.length;
+  while (i > 0) {
+    var pos = 0;
+    for (var j = 0;j < i; j++) {
+      if (arr[j] > arr[j+1]) {
+        var tmp = arr[j];
+        arr[j] = arr[j+1];
+        arr[j+1] = tmp;
+        pos = j;
+      }
     }
+    i = pos;
   }
- }
- return arr;
+  return arr;
 }
 
 ```
