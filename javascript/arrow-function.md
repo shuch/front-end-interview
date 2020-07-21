@@ -18,7 +18,7 @@ a.call(obj);// window
 ```
 
 ## prototype原型
-普通函数 `prototype` 是构造函数，而箭头函数没有 `prototype`，换而言之，箭头函数无法使用 `new` 
+普通函数有构造函数 `constructor` 和原型 `prototype`，而箭头函数没有 `constructor`和`prototype`，换而言之，箭头函数无法使用 `new` 
 ```javascript
 function f1() {
   console.log('f1');
