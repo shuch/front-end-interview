@@ -39,3 +39,4 @@ parseFloat((0.1+0.2).toFixed(12))
 
 参考：
 [Float Point Math](http://0.30000000000000004.com/)
+[JavaScript 中的四舍五入](https://www.cnblogs.com/onepixel/p/5141566.html)
