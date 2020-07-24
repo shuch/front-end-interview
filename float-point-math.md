@@ -36,6 +36,7 @@ parseFloat((0.1+0.2).toFixed(12))
 ```
 * `toFixed`将数字四舍五入到指定小数位
 * `toFixed`对整数无效，先转换为浮点数
+* `toFixed`的`bug`对第三位小数小于等于5舍去，大于等于6会进位
 
 ## 参考：
 * [Float Point Math](http://0.30000000000000004.com/)
