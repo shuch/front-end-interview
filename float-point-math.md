@@ -1,4 +1,4 @@
-# 计算机浮点数表示
+## 计算机浮点数表示
 
 1. 先看一个问题：
 > 0.1 + 0.2 !== 0.3
@@ -37,6 +37,6 @@ parseFloat((0.1+0.2).toFixed(12))
 * `toFixed`将数字四舍五入到指定小数位
 * `toFixed`对整数无效，先转换为浮点数
 
-参考：
-[Float Point Math](http://0.30000000000000004.com/)
-[JavaScript 中的四舍五入](https://www.cnblogs.com/onepixel/p/5141566.html)
+## 参考：
+* [Float Point Math](http://0.30000000000000004.com/)
+* [JavaScript 中的四舍五入](https://www.cnblogs.com/onepixel/p/5141566.html)
