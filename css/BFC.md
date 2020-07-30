@@ -7,6 +7,7 @@
 * `FFC`（`Flex Formating Context`）自适应格式上下文
 * `GFC`（`GridLayout Formating Context`）网格布局格式上下文
 
+特点：
 * 块级格式上下文内的元素，竖着排列
 * 行级格式上下文内的元素，横着排列
 
