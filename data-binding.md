@@ -26,8 +26,6 @@ data.value += '1';
 
 ```
 
-[demo](https://gby6i.csb.app/)
-
 ## `proxy`数据绑定
 ```js
 // model
@@ -57,3 +55,7 @@ function add() {
 }
 
 ```
+
+## 参考
+* [definePropery](https://gby6i.csb.app/)
+* [proxy](https://gby6i.csb.app/proxy.html)
