@@ -11,7 +11,7 @@
 向右旋转 3 步: [5, 6, 7, 1, 2, 3, 4]
 ```
 
-解法:
+解法1:
 ```js
 function rotateArray(arr, k) {
   for (var i = 0; i < k; i++) {
@@ -19,6 +19,17 @@ function rotateArray(arr, k) {
     arr.unshift(tmp);
   }
   return arr;
+}
+```
+
+解法2:
+```js
+function rotateArray(arr, k) {
+  var list = [...arr];
+  var len = arr.length;
+  var step = len % k;
+  var cut = list.splice(len - step);
+  return list.unshift(...cut);
 }
 ```
 
