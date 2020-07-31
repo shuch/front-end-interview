@@ -27,9 +27,10 @@ function rotateArray(arr, k) {
 function rotateArray(arr, k) {
   var list = [...arr];
   var len = arr.length;
-  var step = len % k;
+  var step = k % len;
   var cut = list.splice(len - step);
-  return list.unshift(...cut);
+  list.unshift(...cut);
+  return list;
 }
 ```
 
