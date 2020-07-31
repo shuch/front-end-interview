@@ -21,3 +21,6 @@ function rotateArray(arr, k) {
   return arr;
 }
 ```
+
+## 参考
+* [旋转数组算法题](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/126#issuecomment-493809706)
