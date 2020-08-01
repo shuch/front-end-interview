@@ -104,9 +104,9 @@ Promise.then()或 Promise.catch() 参数有两个特点：
 
 * `then` 第一个函数抛出异常，第二个参数捕获不到，但 `catch` 可以捕获到
 
-## 结论
-`then`第二个参数和`catch`区别
-* `promise`
+## `then`第二个参数和`catch`区别
+* `promise`本身`fulfilled`，如果在`then`第一个参数中报错，第二个参数捕获不到，只有后面的`catch`能捕获到。
+* `promise`本身`rejected`，由于就近原则，`then`的第二个参数就能捕获到。
 
 
 ## 参考
