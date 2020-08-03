@@ -62,7 +62,7 @@ let promise2 = new Promise(resolve => {
   }, 2000);
 })
 
-let promise3 = new Promise.reject('err');
+let promise3 = Promise.reject('err');
 
 promiseAll([promise1, promise2]).then(res => console.log('res', res))
 // res ["定时器1", "定时器2"]
