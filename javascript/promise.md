@@ -34,24 +34,18 @@ class Promise {
 
 ```js
 function promiseAll(promises = []) {
-  let result = [];
-
-  function check(resolve) {
-    let length = result.length;
-    if (length === promises.length) {
-      resolve(result);
-    }
-  }
-
   return new Promise((resolve, reject) => {
+    let result = [];
     for (let i = 0; i < promises.length; i++) {
       let promise = promises[i];
       promise.then(res => {
         result[i] = res;
-        check(resolve);
+        if (result.length === list.length) {
+          resolve(result);
+        }
       }).catch(rej => {
         reject(rej);
-      };
+      });
     }
   })
 }
