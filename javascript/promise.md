@@ -35,10 +35,9 @@ class Promise {
 ```js
 function promiseAll(list = []) {
   return new Promise((resolve, reject) => {
-    let result = [];
-    for (let i = 0; i < list.length; i++) {
-      let promise = list[i];
-      promise.then(res => {
+    var result = [];
+    for (var i = 0; i < list.length; i++) {
+      list[i].then(res => {
         result[i] = res;
         if (result.length === list.length) {
           resolve(result);
