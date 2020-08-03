@@ -38,7 +38,7 @@ function promiseAll(list = []) {
     var result = [];
     for (var i = 0; i < list.length; i++) {
       list[i].then(res => {
-        result[i] = res;
+        result.push(res);
         if (result.length === list.length) {
           resolve(result);
         }
