@@ -64,3 +64,7 @@ function* fun1() {
 var fun2 = () => yield 1; // Uncaught SyntaxError: Unexpected number
 fun1().next() // {value: 1, done: false}
 ```
+
+## 总结
+* 普通函数指向函数调用者
+* 箭头函数指向函数声明环境
