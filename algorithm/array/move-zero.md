@@ -45,5 +45,8 @@ function move0(arr) {
 }
 ```
 
-思路：从后往前遍历数组，遇到0元素，移除，元素末尾补0.
-注意：`splice`删除元素，后面元素会前移，从后往前，保持未处理元素索引不变。
+* 思路：从后往前遍历数组，遇到0元素，移除，元素末尾补0.
+* 注意：`splice`删除元素，后面元素会前移，从后往前，保持未处理元素索引不变。
+
+## 参考
+[算法题「移动零」](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/132)
