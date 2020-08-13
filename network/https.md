@@ -1,11 +1,5 @@
 ## `https`
-超文本传输协议安全层(`hyper text transfer protocol secure`)，介于`http`和`tcp`之间的一层`ssl`
-
-## `ssl`
-`socket secure layer`安全套接字层
-
-## `ca`
-`certification authority`
+超文本传输协议安全层(`hyper text transfer protocol secure`)，介于`http`和`tcp`之间的一层`ssl`（`socket secure layer`）安全套接字层
 
 ## 过程
 * 秘钥协商
@@ -14,6 +8,8 @@
 3. 客户端利用内置`CA`公钥解密数字签名，得到公钥，并验证合法性
 4. 客户端随机生成一个「会话秘钥」，利用公钥进行加密
 5. 服务端利用私钥，解密，得到「会话秘钥」
+
+> `certification authority`
 
 * 对称加密
 1. 客户端利用「会话秘钥」，对传输的数据加密
