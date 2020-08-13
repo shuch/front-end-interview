@@ -30,7 +30,7 @@ class Promise {
 }
 ```
 
-## `promise.all`
+## `promise.all`实现
 
 ```js
 function promiseAll(list = []) {
@@ -70,6 +70,28 @@ promiseAll([promise1, promise2, promise3]).then(res => console.log('res', res))
 // Promise {<rejected>: "err"}
 ```
 
+## `promise.race`实现
+```js
+function promiseRace(list) {
+  return new Promise((resove, reject) => {
+    list.forEach(promise => {
+      promise.then(resove, reject);
+    });
+  });
+}
+
+let promise1 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(100), 1000);
+});
+
+let promise2 = new Promise((resolve, reject) => {
+  setTimeout(() => resolve(200), 1500);
+});
+
+promiseRace([promise1, promise2]).then((res) => {
+  console.log(res);
+});
+```
 
 ## 题目一
 
