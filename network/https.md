@@ -1,6 +1,12 @@
 ## `https`
 超文本传输协议安全层(`hyper text transfer protocol secure`)，介于`http`和`tcp`之间的一层`ssl`
 
+## `ssl`
+`socket secure layer`安全套接字层
+
+## `ca`
+`certification authority`
+
 ## 过程
 * 秘钥协商
 1. 客户端申请服务端的公钥，用于加密「会话秘钥」
