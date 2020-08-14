@@ -7,7 +7,7 @@ JSON.parse(JSON.stringfy(obj));
 
 方法二：深度优先遍历(递归版)
 ```js
-function deepclone(target, hash = new WeakMap()) {
+function deepClone(target, hash = new WeakMap()) {
   if (typeof target !== 'object') {
     return target;
   }
