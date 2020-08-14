@@ -12,7 +12,7 @@ function deepclone(target, hash = new WeakMap()) {
     return target;
   }
   
-  if (typeof target === null) {
+  if (target === null) {
     return target;
   }
   
