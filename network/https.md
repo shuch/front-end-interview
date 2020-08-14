@@ -21,4 +21,5 @@
 * 完整性：利用单向`hash`算法，得到定长`hash`值
 
 ## 参考
-[一次安全可靠的通信——HTTPS原理](https://developers.weixin.qq.com/community/develop/article/doc/000046a5fdc7802a15f7508b556413)
+* [如何加密传输和存储用户密码](https://juejin.im/post/6844903604944371726)
+* [一次安全可靠的通信——HTTPS原理](https://developers.weixin.qq.com/community/develop/article/doc/000046a5fdc7802a15f7508b556413)
