@@ -5,28 +5,40 @@
 JSON.parse(JSON.stringfy(obj));
 ```
 
-方法二：深度优先遍历
+方法二：深度优先遍历(递归版)
 ```js
-function deepclone(target) {
+function deepclone(target, hash = new WeakMap()) {
   if (typeof target !== 'object') {
     return target;
   }
-
-  const obj = {};
- 
-  for (var attr in target) {
-    if (target.hasOwnProperty(attr)) {
-      if (typeof target[attr] === 'object') {
-        obj[attr] = deepclone(target[attr]);
-      } else if (typeof target === 'function') {
-        obj[attr] = target.constructor();
-      } else {
-        obj[attr] = target[attr];
-      }
-    }
+  
+  if (typeof target === null) {
+    return target;
+  }
+  
+  if (target instanceof Date) {
+    return new Date(target);
+  }
+  
+  if (target instanceof RegExp) {
+    return new RegExp(target);
+  }
+  // 循环引用
+  if (hash.has(target)) {
+    return hash.get(target);
   }
 
-  return obj;
+  var clone = Array.isArray(target) ? [] : {};
+  hash.set(target, clone);
+ 
+  var keys = Reflect.ownKeys(target);
+  for (var i = 0; i < keys.length; i++) {
+    var key = keys[i];
+    var attr = target[key];
+    clone[key] = deepClone(attr, hash);
+  }
+
+  return clone;
 }
 
 ```
@@ -61,36 +73,35 @@ function deepCloneBfs(target) {
 
 ## 验证
 ```js
-var a = {
-  a: 2,
-  b: {type: 1},
-  c: ƒunction () { console.log(2) },
-  d: new Date(),
-  e: Symbol(1),
-  f: null,
-  g: undefined,
-}
+var obj = {
+    a: 0,
+    b: 'string',
+    c: false,
+    d: null,
+    e: undefined,
+    [Symbol(1)]: 1,
+    f: {
+        f1: 11,
+        f2: 'f2',
+    },
+    g: [1,2,3],
+    h: new Date(),
+    i: /abc/,
+    j: function(a) {
+        return a+a;
+    },
+};
 
-var b = deepClone(a)
-// a: 2
-// b: {type: 1}
-// c: ƒ ()
-// d: Sat Jun 20 2020 22:17:39 GMT+0800 (中国标准时间) {}
-// e: Symbol(1)
-// f: null
-// g: undefined
-
-a.b = {};// {}
-b.b // {type: 1}
+obj.k = obj;
+deepClone(obj);
 
 ```
 
 ## 问题
 * 如果一个对象有循环引用，则递归会进入死循环，引起调用栈溢出错误。如`var a = {}; a.b = a;`
-  - `hash`表：引入`visitedArr`数组，缓存克隆过的`attr`，存在就使用缓存。
+  - `hash`表：引入`weakmap`，缓存克隆过的`attr`，存在就使用缓存。
   - 同时解决引用丢失问题：两个属性引用同一个对象
   - 可以将深度优先的递归方式改用`while`循环处理
-* 边界问题，如`array, regex, symbol`没有处理，`es6`新引入`set,map`
 
 ## 总结
 * `JSON`深克隆简单，但无法保证对象子类型`function,array`
