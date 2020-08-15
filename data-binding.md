@@ -56,6 +56,10 @@ function add() {
 
 ```
 
+## 实现
+* [defineProperty](https://gby6i.csb.app/)
+* [proxy](https://gby6i.csb.app/proxy.html)
+
 ## 参考
 * [definePropery](https://gby6i.csb.app/)
 * [proxy](https://gby6i.csb.app/proxy.html)
