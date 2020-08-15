@@ -17,6 +17,8 @@ Object.defineProperty(data, 'value', {
     model.textContent = newVal;
   },
   get() {
+    // 没有定义值为undefined
+    // data.value 堆栈溢出
     return model.textContent;
   },
 });
