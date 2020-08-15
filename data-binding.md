@@ -58,6 +58,10 @@ function add() {
 
 ```
 
+## 对比
+* `defineProperty` 无法检测数组下标的变化，`proxy` 可以。
+* `defineProperty` 一次只能监测对象的一个属性，监听整个对象需要深度遍历，`proxy` 可以监听整个对象。
+
 ## 实现
 * [defineProperty](https://gby6i.csb.app/)
 * [proxy](https://gby6i.csb.app/proxy.html)
