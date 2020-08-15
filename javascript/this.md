@@ -26,20 +26,25 @@ obj.add();// obj
 ```
 方法调用，`this`指向调用的对象
 
+
 ## call
 ```js
 function add() {
   console.log(this);
 }
-add.call(null);// null
+obj.add(null);// window
+obj.add({a:1});// {a:1}
 ```
+
+注意，在非严格模式下，参数指定`null`和`undefined`，`this`会被替换为`window`
 
 ## apply
 ```js
 function add() {
   console.log(this);
 }
-add.apply(undefined);// undefined
+add.apply(1);// 1
+add.apply(undefined);// window
 ```
 
 ## 总结
