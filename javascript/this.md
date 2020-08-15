@@ -32,19 +32,30 @@ obj.add();// obj
 function add() {
   console.log(this);
 }
-obj.add(null);// window
-obj.add({a:1});// {a:1}
-```
 
-注意，在非严格模式下，参数指定`null`和`undefined`，`this`会被替换为`window`
+add.call({});// {}
+add.call(null);// window
+```
 
 ## apply
 ```js
 function add() {
   console.log(this);
 }
-add.apply(1);// 1
+add.apply(1);// Number{1}
 add.apply(undefined);// window
+```
+
+> 注意，在非严格模式下，`call`和`apply`参数指定`null`和`undefined`，`this`会被替换为`window`
+
+```js
+function add() {
+  'use strict'
+  console.log(this);
+}
+
+add.call(null) // null
+add.apply(null)// null
 ```
 
 ## 总结
