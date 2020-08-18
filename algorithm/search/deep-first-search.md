@@ -10,9 +10,9 @@ function deepFirstSearch(root) {
   
   while (stack.length) {
     var curNode = stack.pop();
-    var childs = curNode.children;
     results.push(curNode);
-    
+
+    var childs = curNode.children;
     if (childs && childs.length) {
       for (var i = childs.length; i >= 0; i--) {
         stack.push(childs[i]);
