@@ -25,8 +25,8 @@ var nodes = {
 后续遍历递归版
 ```js
 function lrd(nodes, result = []) {
-  nodes.left && lrd(nodes.left);
-  nodes.right && lrd(nodes.right);
+  nodes.left && lrd(nodes.left, result);
+  nodes.right && lrd(nodes.right, result);
   result.push(nodes.node);
   return result;
 }
