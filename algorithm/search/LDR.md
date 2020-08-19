@@ -35,6 +35,6 @@ function ldr(nodes) {
   return result;
 }
 
-ldr(nodes);// 4 5 3 6 1 2
+ldr(nodes);// 4 5 3 6 2 1
 
 ```
