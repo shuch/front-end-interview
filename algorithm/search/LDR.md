@@ -23,8 +23,8 @@ var nodes = {
 
 中序遍历递归版
 ```js
+var result = [];
 function ldr(nodes) {
-  var result = [];
   if (nodes.left) {
     ldr(nodes.left);
   }
