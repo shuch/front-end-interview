@@ -33,3 +33,6 @@ function lrd(nodes, result = []) {
 
 lrd(nodes);// 4 3 5 1 2 6
 ```
+
+## 参考
+* [JavaScript 二叉树遍历专题：算法描述与实现](https://zhuanlan.zhihu.com/p/27307626)
