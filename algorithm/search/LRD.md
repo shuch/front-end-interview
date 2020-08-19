@@ -28,6 +28,7 @@ function lrd(nodes, result = []) {
   nodes.left && lrd(nodes.left);
   nodes.right && lrd(nodes.right);
   result.push(nodes.node);
+  return result;
 }
 
 lrd(nodes);// 4 3 5 1 2 6
