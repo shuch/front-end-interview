@@ -74,3 +74,6 @@ var child = new Child('shu');
 console.log(child.name);
 
 ```
+
+## 参考
+* [JavaScript深入之继承的多种方式和优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
