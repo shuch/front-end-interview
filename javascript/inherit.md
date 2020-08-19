@@ -38,6 +38,9 @@ var child2 = new Child();
 console.log(child2.name);// ['shu', 'chen']
 ```
 
+分析：`Child.prototype`变为`Parent`一个实例，拥有`name`属性，等同于`Child.prototype.name`，
+child实例修改的是child.prototype.name
+
 ## 构造函数继承
 ```js
 function Parent() {
