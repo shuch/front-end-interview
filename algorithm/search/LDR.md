@@ -38,3 +38,6 @@ function ldr(nodes) {
 ldr(nodes);// 4 5 3 6 2 1
 
 ```
+
+## 参考
+* [JavaScript 二叉树遍历专题：算法描述与实现](https://zhuanlan.zhihu.com/p/27307626)
