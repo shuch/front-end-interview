@@ -38,7 +38,8 @@ var child2 = new Child();
 console.log(child2.name);// ['shu', 'chen']
 ```
 
-> "当 SubType 通过原型链继承了 SuperType 之后，SubType.prototype 就变成了 SuperType 的一个实例，因此它也拥有了一个它自 己的 colors 属性——就跟专门创建了一个 SubType.prototype.colors 属性一样。但结果是什么 呢?结果是 SubType 的所有实例都会共享这一个 colors 属性" --P167《高级程序设计》
+> 当 SubType 通过原型链继承了 SuperType 之后，SubType.prototype 就变成了 SuperType 的一个实例，因此它也拥有了一个它自 己的 colors 属性——就跟专门创建了一个 SubType.prototype.colors 属性一样。但结果是什么 呢?结果是 SubType 的所有实例都会共享这一个 colors 属性
+—— P167《高级程序设计》
 
 ## 构造函数继承
 ```js
@@ -62,7 +63,7 @@ console.log(child2.name);// [1]
 
 优势：
 * 可以解决引用实例共享的问题
-* 可以在child中向parent传参
+* 可以在`child`中向`parent`传参
 
 ```js
 function Parent(name) {
@@ -112,3 +113,4 @@ child.say();// say shu
 
 ## 参考
 * [JavaScript深入之继承的多种方式和优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
+* [继承](https://segmentfault.com/a/1190000015216289)
