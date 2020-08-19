@@ -29,11 +29,9 @@ function Child() {}
 Child.prototype = new Parent();
 
 var child1 = new Child();
-var child2 = new Child();
-console.log(child1.name);// ['shu']
-
 child1.name.push('chen');
-console.log(child1.name);// ['shu', 'chen']
+
+var child2 = new Child();
 console.log(child2.name);// ['shu', 'chen']
 ```
 
