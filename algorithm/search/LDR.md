@@ -23,14 +23,13 @@ var nodes = {
 
 中序遍历递归版
 ```js
-var result = [];
-function ldr(nodes) {
+function ldr(nodes, results = []) {
   if (nodes.left) {
-    ldr(nodes.left);
+    ldr(nodes.left, results);
   }
   result.push(nodes.node);
   if (nodes.right) {
-    ldr(nodes.right);
+    ldr(nodes.right， results);
   }
   return result;
 }
