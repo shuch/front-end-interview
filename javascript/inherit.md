@@ -38,8 +38,7 @@ var child2 = new Child();
 console.log(child2.name);// ['shu', 'chen']
 ```
 
-分析：`Child.prototype`变为`Parent`一个实例，拥有`name`属性，等同于`Child.prototype.name`，
-child实例修改的是child.prototype.name
+> "当 SubType 通过原型链继承了 SuperType 之后，SubType.prototype 就变成了 SuperType 的一个实例，因此它也拥有了一个它自 己的 colors 属性——就跟专门创建了一个 SubType.prototype.colors 属性一样。但结果是什么 呢?结果是 SubType 的所有实例都会共享这一个 colors 属性" --P167《高级程序设计》
 
 ## 构造函数继承
 ```js
@@ -70,14 +69,46 @@ function Parent(name) {
   this.name = name;
 }
 
+Parent.prototype.say = function() {
+  console.log('say', this.name);
+}
+
 function Child(name) {
   Parent.call(this, name);
 }
 
 var child = new Child('shu');
 console.log(child.name);
+child.say();// 
 
 ```
+
+缺点：无法共享父类方法，每次创建实例都初始化一次父类方法
+
+## 组合继承
+```js
+function Parent(name) {
+  this.name = name;
+}
+
+Parent.prototype.say = function() {
+  console.log('say', this.name);
+}
+
+function Child() {
+  Parent.call(this, 'shu');
+}
+
+Child.prototype = new Parent();
+Child.prototype.constructor = Child;
+
+var child = new Child();
+console.log(child.name);// shu
+child.say();// say shu
+```
+组合继承优势：
+* 原型链继承优点——从`prototype`中继承方法
+* 构造方法继承——从构造函数继承属性
 
 ## 参考
 * [JavaScript深入之继承的多种方式和优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
