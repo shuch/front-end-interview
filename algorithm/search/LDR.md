@@ -32,6 +32,7 @@ function ldr(nodes) {
   if (nodes.right) {
     ldr(nodes.right);
   }
+  return result;
 }
 
 ldr(nodes);// 4 5 3 6 1 2
