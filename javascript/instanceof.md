@@ -23,3 +23,6 @@ var car = new Car();
 instance_of(car, Car);
 
 ```
+
+## 参考
+[彻底了解instanceof的底层实现原理](https://zhuanlan.zhihu.com/p/105487552)
