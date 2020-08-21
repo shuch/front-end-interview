@@ -14,6 +14,7 @@
 * 设置内容安全策略`content-security-policy: default-src 'seft'`
 * 设置`httpOnly`，禁止`js`操作`cookie`
 * 设置`secure`，在`https header`中发送`cookie`
+* 设置`x-xss-protection: 1;mode=block`
 
 
 ## `CSRF`
