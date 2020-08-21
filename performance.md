@@ -20,8 +20,14 @@
 ## 加快首屏时间
 * 使用`cdn`
 * `css`放头部，`js`放底部
-* 字体文件预加载 `preload`
-* 域名预解析 `dns-prefetch`
+* 字体文件预加载
+```js
+<link rel='preload' href="https://shuch.im/font.woff2" />
+```
+* 域名预解析
+```js
+<link rel='dns-prefetch' href="https://github.githubassets.com"/>
+```
 * 使用`SSR`
 * 减少重排和重绘
   - `dom`操作离线，`DocumentFragment`，`display: none`
