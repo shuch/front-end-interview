@@ -35,4 +35,5 @@
   - `dom`操作离线，`DocumentFragment`，`display: none`
   - 使用`class`代替`style`
   - 使用`transform`,`filter`,`opacity`,`will-change`开启`GPU`加速
-* 使用动态`import()`或`require.ensure`按需加载
+* 按需引入组件，使用动态`import()`或`require.ensure`
+* 按需加载 `IntersetionOberver`
