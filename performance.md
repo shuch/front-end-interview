@@ -29,6 +29,8 @@
 <link rel='dns-prefetch' href="https://github.githubassets.com"/>
 ```
 * 使用`SSR`
+  - `react`使用`renderToString`
+  - `nextjs`
 * 减少重排和重绘
   - `dom`操作离线，`DocumentFragment`，`display: none`
   - 使用`class`代替`style`
