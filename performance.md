@@ -27,4 +27,4 @@
   - `dom`操作离线，`DocumentFragment`，`display: none`
   - 使用`class`代替`style`
   - 使用`transform`,`filter`,`opacity`,`will-change`开启`GPU`加速
-* 使用`import()`或`require.ensure`按需加载
+* 使用动态`import()`或`require.ensure`按需加载
