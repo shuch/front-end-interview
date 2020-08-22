@@ -39,3 +39,4 @@
 * 按需加载
   - 动态`import()`或`require.ensure`
   - 页面`IntersetionObserver`
+* 字体异步加载 `font-display: swap`
