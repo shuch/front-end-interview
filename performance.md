@@ -42,3 +42,6 @@
   - 动态`import()`或`require.ensure`
   - 页面`IntersetionObserver`
 * 字体异步加载 `font-display: swap`
+
+## 参考
+[Front-End Performance Checklist 2020](https://www.smashingmagazine.com/2020/01/front-end-performance-checklist-2020-pdf-pages/)
