@@ -5,13 +5,15 @@ Function.prototype.call2 = function(context) {
   context.fn = this;
   
   var args = [];
+  var result;
   for (var i = 1; i < arguments.length; i++) {
     args.push('arguments['+ i +']');
   }
   console.log('context.fn('+ args +')');
-  eval('context.fn('+ args +')');
+  result = eval('context.fn('+ args +')');
 
   delete context.fn;
+  return result;
 }
 
 var obj = {
@@ -36,17 +38,19 @@ Function.prototype.apply2 = function(context, arr) {
   context.fn = this;
   
   var args = [];
+  var result;
   if (!arr) {
-    context.fn();
+    result = context.fn();
   }
   else {
     for (var i = 0; i < arr.length; i++) {
       args.push('arr[' + i + ']');
     }
-    eval('context.fn(' + args + ')');
+    result = eval('context.fn(' + args + ')');
   }
 
   delete context.fn;
+  return result;
 }
 
 var obj = {
