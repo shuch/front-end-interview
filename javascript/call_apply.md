@@ -1,7 +1,8 @@
 ## call实现
 ```js
 Function.prototype.call2 = function(context) {
-  context.fn = this || window;
+  context = context || window;
+  context.fn = this;
   
   var args = [];
   for (var i = 1; i < arguments.length; i++) {
@@ -32,14 +33,20 @@ say.call2(obj);
 ## apply 实现
 ```js
 Function.prototype.apply2 = function(context, arr) {
-  context.fn = this || window;
+  context.fn = this;
   
   var args = [];
-  for (var i = 0; i < arr.length; i++) {
-    args.push('arr[' + i + ']');
+  if (!arr) {
+    context.fn();
+  }
+  else {
+    for (var i = 0; i < arr.length; i++) {
+      args.push('arr[' + i + ']');
+    }
+    eval('context.fn(' + args + ')');
   }
 
-  eval('context.fn(' + args + ')');
+  delete context.fn;
 }
 
 var obj = {
@@ -51,6 +58,8 @@ function say(age, name) {
   return this.value;
 }
 
-say.call2(obj);
+say.apply2(obj);
 ```
 
+思路：
+* 和`call`相同，参数通过数组的形式接收，并转化为字符串
