@@ -67,3 +67,7 @@ say.apply2(obj);
 
 思路：
 * 和`call`相同，参数通过数组的形式接收，并转化为字符串
+
+
+参考：
+* [JavaScript深入之call和apply的模拟实现](https://github.com/mqyqingfeng/Blog/issues/11)
