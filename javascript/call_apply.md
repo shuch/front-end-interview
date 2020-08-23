@@ -9,7 +9,7 @@ Function.prototype.call2 = function(context) {
   for (var i = 1; i < arguments.length; i++) {
     args.push('arguments['+ i +']');
   }
-  console.log('context.fn('+ args +')');
+
   result = eval('context.fn('+ args +')');
 
   delete context.fn;
