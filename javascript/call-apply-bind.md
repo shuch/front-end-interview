@@ -76,14 +76,14 @@ Function.prototype.bind2 = function(context) {
   var args = slice.call(arguments, 1);
   return function() {
     var restArgs = slice.call(arguments);
-    reutrn fn.call(content, args.concat(restArgs));
+    return fn.apply(context, args.concat(restArgs));
   }
 }
 
 var o = { name: 'sh' }
 function f(a,b) {
   console.log('arg', a, b);
-  return this;
+  return this.name;
 }
 var nf = f.bind2(o, 1, 2);
 nf();// arg 1 2 sh
@@ -92,3 +92,4 @@ nf();// arg 1 2 sh
 
 参考：
 * [JavaScript深入之call和apply的模拟实现](https://github.com/mqyqingfeng/Blog/issues/11)
+* [面试题：深入解析 bind 实现原理](https://juejin.im/post/6844904025180078087)
