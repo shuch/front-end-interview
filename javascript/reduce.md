@@ -21,8 +21,8 @@ Array.prototype.reduce2 = function(fn, initVal) {
 var arr = [];
 arr.reduce2(()=>{});// error:reduce without initval
 arr = [1,2,3];
-arr.reduce2((pre,cur)=>pre+cur);
-arr.reduce2((pre,cur)=>pre+cur, 4);
+arr.reduce2((pre,cur)=>pre+cur); // 6
+arr.reduce2((pre,cur)=>pre+cur, 4); // 10
 
 ```
 
