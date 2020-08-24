@@ -68,6 +68,27 @@ say.apply2(obj);
 思路：
 * 和`call`相同，参数通过数组的形式接收，并转化为字符串
 
+## bind 实现
+```js
+Function.prototype.bind2 = function(context) {
+  var fn = this;
+  var slice = Array.prototype.slice;
+  var args = slice.call(arguments, 1);
+  return function() {
+    var restArgs = slice.call(arguments);
+    reutrn fn.call(content, args.concat(restArgs));
+  }
+}
+
+var o = { name: 'sh' }
+function f(a,b) {
+  console.log('arg', a, b);
+  return this;
+}
+var nf = f.bind2(o, 1, 2);
+nf();// arg 1 2 sh
+```
+
 
 参考：
 * [JavaScript深入之call和apply的模拟实现](https://github.com/mqyqingfeng/Blog/issues/11)
