@@ -64,4 +64,4 @@ process.send({ hello: 'I am child' });
 ```
 
 ## 参考
-* [Nodejs进程间通信](https://cloud.tencent.com/developer/article/1444616)
+* [Nodejs进程间通信](http://www.ayqy.net/blog/nodejs%E8%BF%9B%E7%A8%8B%E9%97%B4%E9%80%9A%E4%BF%A1/)
