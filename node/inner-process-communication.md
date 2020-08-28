@@ -5,18 +5,43 @@
 * 消息队列，消息中间件，最强大，解决复杂场景
 
 ## 输入输出流
+`spawn.js`
 ```js
 const { spawn } = require('child_process');
-const child = spawn('ls', ['-l']);
+const child = spawn('node', ['./spawn-child.js']);
 
+// parent process write
+child.stdin.write(JSON.stringify({
+  type: 'handshake',
+  payload: 'hello',
+}));
+
+// parent process receive
 child.stdout.setEncoding('utf8');
 child.stdout.on('data', function(data) {
-  console.log('spawn', data);
+  console.log('parent receive:', data);
+})
+```
+`spawn-child.js`
+```js
+// child process receive
+process.stdin.on('data', function(chunk) {
+  var str = chunk.toString();
+  str = JSON.parse(str);
+  switch(str.type) {
+    case 'handshake':
+      process.stdout.write(JSON.stringify({
+        type: str.type,
+        payload: 'am child process',
+      }));
+      break;
+    default:
+      break;
+  }
 })
 ```
 
 ## ipc管道
-```js
 `fork.js`
 ```javascript
 const childProcess = require('child_process');
@@ -36,7 +61,6 @@ process.on('message', (message) => {
 });
 
 process.send({ hello: 'I am child' });
-```
 ```
 
 ## 参考
