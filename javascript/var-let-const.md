@@ -44,6 +44,11 @@ console.log(a); // ReferenceError: a is not defined
 console.log(b); // 1
 ```
 
+## 变量提升
+* `var,let,const`存在变量提升（作用域顶部）
+* `var` 会初始化为`undefined`
+* `const`和`let`一样，不会被初始化，提前使用会报错
+
 ```js
 var a = 1;
 if (true) {
@@ -52,11 +57,6 @@ if (true) {
 }
 ```
 > 暂时性死区（temporary dead zone），在块级作用域内声明的变量，会绑定作用域，在声明前使用会报错，导致`typeof`运算不安全
-
-
-## 变量提升
-* `var,let`存在变量提升（作用域顶部），`var` 会初始化为`undefined`，而`let`不会初始化，提前使用会报错
-* `const`和`let`一样，存在变量提升，且未被初始化
 
 ## 重新声明
 * `var`可以重新定义和重新声明
