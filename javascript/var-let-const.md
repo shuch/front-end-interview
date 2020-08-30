@@ -14,10 +14,8 @@ a.name = 'hh' // hh
 
 
 ## 作用域
-* `var`只有函数作用域和全局作用域，`let`和`const`存在块级作用域
-  -  `var` 声明在`Glabal`
-  -  `let`和`const` 声明在`Block`，顶层`Block`称为`Script`
-* `let`和`const`为块级作用域，存在暂时性死区
+* `var`只有函数作用域和全局作用域
+* `let`和`const`存在块级作用域
 
 ```js
 var a = 1;// Global
@@ -35,7 +33,8 @@ const c = 3; // Script
   }
 }
 ```
-
+> `var` 声明在`Glabal`
+> `let`和`const` 声明在`Block`，顶层`Block`称为`Script`
 ```js
 {
   let a = 1;
@@ -68,9 +67,7 @@ if (true) {
 * [for 循环闭包](https://github.com/shuch/blog/tree/master/scope/block)
 * [ES6之let（理解闭包）和const命令](https://www.cnblogs.com/zhuzhenwei918/p/6131345.html)
 * [关于 const 和 let 声明的变量不在 window 上](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/30)
-
-
-
+* [Var, Let, and Const – What's the Difference?](https://www.freecodecamp.org/news/var-let-and-const-whats-the-difference/)
 
 
 
