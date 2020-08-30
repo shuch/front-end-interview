@@ -14,7 +14,10 @@ a.name = 'hh' // hh
 
 
 ## 作用域
-* `var`存在变量提升，作用域为全局作用域
+* `var`只有函数作用域和全局作用域，`let`和`const`存在块级作用域
+  -  `var` 声明在`Glabal`
+  -  `let`和`const` 声明在`Block`，顶层`Block`称为`Script`
+* `let`和`const`为块级作用域，存在暂时性死区
 
 ```js
 var a = 1;// Global
@@ -33,11 +36,6 @@ const c = 3; // Script
 }
 ```
 
-  -  `var` 声明在`Glabal`
-  -  `let`和`const` 声明在`Block`，顶层`Block`称为`Script`
-
-* `let`和`const`为块级作用域，存在暂时性死区
-
 ```js
 {
   let a = 1;
@@ -54,14 +52,17 @@ if (true) {
   let a = 2;
 }
 ```
+> 暂时性死区（temporary dead zone），在块级作用域内声明的变量，会绑定作用域，在声明前使用会报错，导致`typeof`运算不安全
 
-* 暂时性死区（temporary dead zone），在块级作用域内声明的变量，会绑定作用域，在声明前使用会报错，导致`typeof`运算不安全
-* `var`只有函数作用域和全局作用域，`let`和`const`存在块级作用域
 
-## 总结
-* 正由于`var`存在变量提升（包括创建，初始化和赋值），允许声明前提前使用造成bug，所以产生了块级作用域的`let`和`const`.
-* 使用`var`声明的变量会在预编译阶段分配栈内存，而`let`和`const`不会
-* 如果`let`和`const`存储的是引用类型，则会在堆内存开辟空间，在变量中存储的是堆内存地址
+## 变量提升
+* `var,let`存在变量提升（作用域顶部），`var` 会初始化为`undefined`，而`let`不会初始化，提前使用会报错
+* `const`和`let`一样，存在变量提升，且未被初始化
+
+## 重新声明
+* `var`可以重新定义和重新声明
+* `let`可以重新定义，但不能重新声明
+* `const`既不能重新定义，也不能重新声明
 
 ## 参考
 * [for 循环闭包](https://github.com/shuch/blog/tree/master/scope/block)
