@@ -104,3 +104,4 @@ process.on('exit', () => {
 ## 参考
 * [Node.js中的child_process及进程通信](https://byvoid.com/zhs/blog/node-child-process-ipc/)
 * [Node.js进程通信模块child_process](http://blog.fens.me/nodejs-child-process/)
+* [cluster_how_it_works](https://nodejs.org/api/cluster.html#cluster_how_it_works)
