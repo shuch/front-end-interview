@@ -5,7 +5,7 @@ function Node(value) {
   this.next = null;
 }
 
-Node.prototype.next = function(node) {
+Node.prototype.setNext = function(node) {
   this.next = node;
   return node;
 }
@@ -22,8 +22,8 @@ var node = new Node(1);
 var node2 = new Node(2);
 var node3 = new Node(3);
 
-node.next(node2);
-node2.next(node3);
+node.setNext(node2);
+node2.setNext(node3);
 
 node.visit();// 1 2 3
 ```
