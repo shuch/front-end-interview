@@ -5,8 +5,8 @@
 * `get`幂等，`post`不是幂等
 
 ## `HEAD`和`OPTIONS`区别
-* `head`用于请求资源信息（etag，content-type）
-* `options`用于请求资源支持的方法(get,post,delete)
+* `head`用于请求资源信息（`Last-Modified`，`Etag`，`Content-Type`）
+* `options`用于请求资源支持的方法(`get`,`post`,`delete`)
 
 ## 参考
 * [9 Method Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9)
