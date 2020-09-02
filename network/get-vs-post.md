@@ -2,6 +2,7 @@
 * `get`用于请求资源，`post`用于提交资源
 * `get`参数对用户可见，`post`参数不可见
 * `get`限制长度(1024b)，`post`不限制
+* `get`幂等，`post`不是幂等
 
 ## `HEAD`和`OPTIONS`区别
 * `head`用于请求资源信息（etag，content-type）
