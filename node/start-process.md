@@ -5,7 +5,7 @@
 
 通过`process.env.UV_THREADPOOL_SIZE = 64`来调整默认线程数。
 
-为了提高多核`CPU`利用率，node 提供`child_process`和`cluster`两个模块开启多进程。
+为了提高多核`CPU`利用率，`node` 提供`child_process`和`cluster`两个模块开启多进程。
 
 ## 开启进程方法
 * `child_process`衍生子进程
