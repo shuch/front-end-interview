@@ -5,13 +5,17 @@ function ajax({
   url,
   data,
 }) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     var xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
 
     xhr.onreadystatechange = function() {
-      if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-        resove(JSON.parse(xhr.responseText));
+      if (xhr.readyState === XMLHttpRequest.DONE) {
+        if (xhr.status === 200) {
+          resove(JSON.parse(xhr.responseText));
+        } else {
+          reject(new Error('network error'));
+        }      
       }
     }
 
