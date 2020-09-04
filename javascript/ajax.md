@@ -12,7 +12,7 @@ function ajax({
     xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
-          resove(JSON.parse(xhr.responseText));
+          resolve(JSON.parse(xhr.responseText));
         } else {
           reject(new Error('network error'));
         }      
