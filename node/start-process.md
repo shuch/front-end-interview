@@ -1,5 +1,11 @@
 ## 多进程
-* 提高单进程下多核`CPU`利用率
+虽然`node`和浏览器是多线程的，但是`js`解释引擎是单线程的，`node`没有多线程模式，只能通过开启多进程方式模拟多线程。
+
+默认情况下，node一个进程会开启7个线程，包括执行代码的主线程，垃圾回收线程，如果有`IO(fs,dns)`操作或计算密集操作`zlib,crypto`会变成11个线程。
+
+通过`process.env.UV_THREADPOOL_SIZE = 64`来调整默认线程数。
+
+为了提高多核`CPU`利用率，node 提供`child_process`和`cluster`两个模块开启多进程。
 
 ## 开启进程方法
 * `child_process`衍生子进程
@@ -105,3 +111,4 @@ process.on('exit', () => {
 * [Node.js中的child_process及进程通信](https://byvoid.com/zhs/blog/node-child-process-ipc/)
 * [Node.js进程通信模块child_process](http://blog.fens.me/nodejs-child-process/)
 * [cluster_how_it_works](https://nodejs.org/api/cluster.html#cluster_how_it_works)
+* [真-Node多线程](https://juejin.im/post/6844903775937757192)
