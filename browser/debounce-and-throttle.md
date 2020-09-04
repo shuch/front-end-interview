@@ -57,12 +57,29 @@ function throttle(fn, threshold) {
     }, threshold);
   }
 }
+```
 
+时间戳版本
+```js
+function throttle(fn, threshold) {
+  var lastTime;
+
+  return function() {
+    var context = this;
+    var args = context;
+    var now = Date.now();
+
+    if (!lastTime || now - lastTime >= threshold) {
+      fn.apply(context, args);
+      lastTime = now;
+    }
+  }
+}
 ```
 
 说明：
-1. 当函数调用距离上一次的时间间隔大于等于`delay`时，执行函数。
-2. 若只调用了一次，确保函数在`delay`后执行。
+1. 当函数调用在`threshold`间隔内触发时，不执行函数。
+2. 若只调用了一次，确保函数在`threshold`后执行。
 
 ## 应用
 * 浏览器的高频事件`resize, scroll, touchmove, mousemove`
