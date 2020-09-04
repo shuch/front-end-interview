@@ -1,14 +1,20 @@
 ## `ajax` 实现
 ```js
-function ajax({ url, method = 'GET', data }) {
+function ajax({
+  method = 'GET',
+  url,
+  data,
+}) {
   return new Promise((resolve) => {
     var xhr = new XMLHttpRequest();
     xhr.open(method, url, true);
-    xhr.onreadystatechagne = function() {
+
+    xhr.onreadystatechange = function() {
       if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
         resove(JSON.parse(xhr.responseText));
       }
-    }    
+    }
+
     xhr.send(data);
   });
 }
