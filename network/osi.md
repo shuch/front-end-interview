@@ -27,4 +27,5 @@
 * 网络接口层
 
 ## 参考
-[网络模型到底是七层，五层，还是四层？](https://zhuanlan.zhihu.com/p/73807507)
+* [网络模型到底是七层，五层，还是四层？](https://zhuanlan.zhihu.com/p/73807507)
+* [OSI网络七层模型](https://cloud.tencent.com/developer/article/1537480)
