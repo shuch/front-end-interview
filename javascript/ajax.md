@@ -1,6 +1,6 @@
-## `ajax` 实现
 `Asynchronous JavaScript And XML`异步的`JavaScript` 和 `XML`技术
 
+## `ajax` 实现
 ```js
 function ajax({
   method = 'GET',
