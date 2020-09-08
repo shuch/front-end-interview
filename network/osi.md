@@ -1,5 +1,5 @@
 ## `osi` 七层网络模型
-`osi`开放系统互联(`open system interconnection`)，是帮助不同类型主机实现数据传输的汽车七层模型
+`osi`开放系统互联(`open system interconnection`)，是帮助不同类型主机实现数据传输的七层模型
 
 * 应用层
 * 表示层
