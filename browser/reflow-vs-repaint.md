@@ -1,7 +1,7 @@
 ## 重绘和回流
 * 发生在浏览器解析 `DOM Tree` 过程中
 * 回流`Reflow`计算每一个可见(visible)元素的大小和位置，回流也称布局`layout`
-* 重绘`Repaint`把每个像素(pixels)渲染到屏幕上
+* 重绘`Repaint`把每个像素(pixels)绘制到屏幕上
 
 ## 回流(Reflow)
 * `position` 位置
