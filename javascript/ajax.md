@@ -1,4 +1,6 @@
 ## `ajax` 实现
+`Asynchronous javascript and xml`异步的`JavaScript` 和 `XML`技术
+
 ```js
 function ajax({
   method = 'GET',
