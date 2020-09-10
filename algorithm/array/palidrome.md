@@ -1,7 +1,7 @@
 ## 回文
 ```js
 function palidrome(str) {
-  for (var i=0;j=str.length-1;i<=j;i++,j--) {
+  for (var i=0,j=str.length-1;i<=j;i++,j--) {
     if (str[i] !== str[j]) {
       return false;
     }
