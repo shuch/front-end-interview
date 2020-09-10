@@ -1,6 +1,5 @@
 # 归并排序
 ```javascript
-
 function merge(left, right) {
   var result = [];
   while (left.length > 0 && right.length > 0) {
@@ -11,7 +10,7 @@ function merge(left, right) {
     }
   }
   
-  return result.concat(right, left);
+  return result.concat(left, right);
 }
 
 function mergeSort(arr) {
@@ -23,7 +22,7 @@ function mergeSort(arr) {
   var left = arr.slice(0, middleIndex);
   var right = arr.slice(middleIndex);
   
-  return merge(mergeSort(right), mergeSort(left));
+  return merge(mergeSort(left), mergeSort(right));
 }
 ```
 
