@@ -82,11 +82,12 @@ Function.prototype.bind2 = function(context) {
 
 var o = { name: 'sh' }
 function f(a,b) {
-  console.log('arg', a, b);
+  console.log('arg', Array.from(arguments));
   return this.name;
 }
 var nf = f.bind2(o, 1, 2);
-nf();// arg 1 2 sh
+nf();// arg [1 2] sh
+nf(3,4) // arg [1,2,3,4] sh
 ```
 
 
