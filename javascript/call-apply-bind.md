@@ -90,6 +90,8 @@ nf();// arg [1 2] sh
 nf(3,4) // arg [1,2,3,4] sh
 ```
 
+* 返回一个新的函数，`this` 指向第一个参数
+* 新函数的参数会追加到原函数的参数列表后
 
 参考：
 * [JavaScript深入之call和apply的模拟实现](https://github.com/mqyqingfeng/Blog/issues/11)
