@@ -50,8 +50,8 @@ var child1 = new TreeNode(2);
 var child2 = new TreeNode(3);
 var child3 = new TreeNode(4);
 var child4 = new TreeNode(5);
-root.left = left;
-root.right = right;
+root.left = child1;
+root.right = child2;
 
 child1.left = child3;
 child1.right = child4;
