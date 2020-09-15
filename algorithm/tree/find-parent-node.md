@@ -46,10 +46,15 @@ function TreeNode(val) {
 }
 
 var root = new TreeNode(1);
-var left = new TreeNode(2);
-var right = new TreeNode(3);
+var child1 = new TreeNode(2);
+var child2 = new TreeNode(3);
+var child3 = new TreeNode(4);
+var child4 = new TreeNode(5);
 root.left = left;
 root.right = right;
+
+child1.left = child3;
+child1.right = child4;
 
 findParent(root);// 1
 ```
