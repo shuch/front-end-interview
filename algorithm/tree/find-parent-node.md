@@ -30,16 +30,6 @@ function findParent(root, p, q) {
   return root;
 }
 
-var root = {
-    value: 1,
-    left: {
-        value: 2
-    },
-    right: {
-        value: 3,
-    },
-}
-
 function TreeNode(val) {
   this.val = val;
   this.left = this.right = null;
