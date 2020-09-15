@@ -12,18 +12,18 @@
 ## 实现
 ```js
 function findParent(root, p, q) {
-  if (!root || root === p || root === q) {
+  if (root === null || root === p || root === q) {
     return root;
   }
 
   var left = findParent(root.left, p, q);
   var right = findParent(root.right, p, q);
   
-  if (!left) {
-    return left;
+  if (left === null) {
+    return right;
   }
   
-  if (!right) {
+  if (right === null) {
     return left;
   }
   
@@ -56,7 +56,7 @@ child2.right = child5;
 
 child3.right = child6;
 
-findParent(root);// 1
+findParent(root, child4, child6);// {val:10}
 ```
 
 ## 参考
