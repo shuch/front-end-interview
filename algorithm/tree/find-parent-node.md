@@ -1,6 +1,6 @@
 ## 查找二叉树最近父节点
 ```
-    1
+   10
    / \
   2   3
  / \   \
@@ -45,16 +45,21 @@ function TreeNode(val) {
   this.left = this.right = null;
 }
 
-var root = new TreeNode(1);
-var child1 = new TreeNode(2);
-var child2 = new TreeNode(3);
-var child3 = new TreeNode(4);
-var child4 = new TreeNode(5);
-root.left = child1;
-root.right = child2;
+var root = new TreeNode(10);
 
-child1.left = child3;
-child1.right = child4;
+var child2 = new TreeNode(2);
+var child3 = new TreeNode(3);
+var child4 = new TreeNode(4);
+var child5 = new TreeNode(5);
+var child6 = new TreeNode(6);
+
+root.left = child2;
+root.right = child3;
+
+child2.left = child4;
+child2.right = child5;
+
+child3.right = child6;
 
 findParent(root);// 1
 ```
