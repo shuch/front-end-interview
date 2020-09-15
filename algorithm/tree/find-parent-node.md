@@ -40,6 +40,17 @@ var root = {
     },
 }
 
+function TreeNode(val) {
+  this.val = val;
+  this.left = this.right = null;
+}
+
+var root = new TreeNode(1);
+var left = new TreeNode(2);
+var right = new TreeNode(3);
+root.left = left;
+root.right = right;
+
 findParent(root);// 1
 ```
 
