@@ -17,7 +17,7 @@ function findParent(root, p, q) {
   }
 
   var left = findParent(root.left, p, q);
-  var right = findParent(oot.right, p, q);
+  var right = findParent(root.right, p, q);
   
   if (!left) {
     return left;
@@ -30,6 +30,17 @@ function findParent(root, p, q) {
   return root;
 }
 
+var root = {
+    value: 1,
+    left: {
+        value: 2
+    },
+    right: {
+        value: 3,
+    },
+}
+
+findParent(root);// 1
 ```
 
 ## 参考
