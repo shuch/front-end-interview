@@ -1,4 +1,7 @@
 ## `promise` 实现
+
+基于队列的事件订阅和发布原理
+
 ```js
 class Promise {
   constructor(fn) {
