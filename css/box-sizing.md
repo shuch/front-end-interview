@@ -6,14 +6,13 @@
 ## 标准盒模型
 ```js
 width = contentWidth
-heigth = contentHeight
 ```
 元素宽高等于实际内容宽高
 
 ## 怪异盒模型
+盒子宽度
 ```js
-width = contentWidth + padding * 2 + border * 2;
-height = contentHeight + padding * 2 + border * 2;
+width = contentWidth + padding * 2 + border * 2 + margin * 2
 ```
 元素宽高等于实际内容宽高，内边距，边框宽度之和
 
