@@ -15,7 +15,7 @@
   - 响应式图片 `srcset`和`size`
   - 使用 `webp` 格式
   - 压缩`png`
-* 减小js提交
+* 减小js体积
   - 压缩 `uglifyjs`
   - 使用`webpack`中的`tree-shaking`去掉不必要的代码
 
