@@ -10,11 +10,15 @@ width = contentWidth
 元素宽高等于实际内容宽高
 
 ## 怪异盒模型
-盒子宽度
+盒子占位
 ```js
 width = contentWidth + padding * 2 + border * 2 + margin * 2
 ```
-元素宽高等于实际内容宽高，内边距，边框宽度之和
+盒子宽等于实际内容宽高，内边距，边框宽度之和，不包括`margin`
+```js
+width = contentWidth + padding * 2 + border * 2
+```
+
 
 注意：
 `background`区域包括`width,padding,border`
