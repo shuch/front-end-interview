@@ -25,4 +25,9 @@
 * 检测`origin`和`referer`
 * 设置`same-site`策略
 
+`token`存放位置
+* 可以放在cookie中，发送请求时，从cookie中取值，放入请求头或请求参数中，及时请求时会带上cookie，但cookie跨站无法访问
+* 放在window对象下
+* 放在表单中存储
+
 
