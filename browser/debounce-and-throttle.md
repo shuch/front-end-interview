@@ -26,7 +26,7 @@ function debounce(fn, delay, immediate) {
 
 ```
 说明
-1. 缓存函数运行时的调用的`this`
+1. 缓存函数运行时的`this`，否则在`setTimeout`中会丢失上下文
 2. 为了实现第一次触发事件就执行函数，加了<font style="color: #0ABF5B">immdiate</font>
 
 测试
