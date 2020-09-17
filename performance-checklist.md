@@ -41,6 +41,7 @@
 * 按需加载
   - 动态`import()`或`require.ensure`
   - 页面`IntersetionObserver`
+  - 使用`tree shaking` 处理 `es module`代码，如`import { Button } from 'antd'`,默认有`tree shaking` 效果
 * 字体异步加载 `font-display: swap`
 
 ## 参考
