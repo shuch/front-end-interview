@@ -37,7 +37,8 @@
   - `dom`操作离线，`DocumentFragment`，`display: none`
   - 使用`class`代替`style`
   - 使用`transform`,`filter`,`opacity`,`will-change`开启`GPU`加速
-
+* 延迟加载
+  - `react suspense`
 * 按需加载
   - 动态`import()`或`require.ensure`
   - 页面`IntersetionObserver`
