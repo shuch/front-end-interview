@@ -2,6 +2,7 @@
 * 原型链继承
 * 构造函数继承
 * 组合继承
+* `ES6`继承
 * 原型式继承
 * 寄生式继承
 * 寄生组合式继承
@@ -113,6 +114,25 @@ Child.prototype.constructor = Child;
 var child = new Child();
 console.log(child.name);// shu
 child.say();// say shu
+```
+
+## es6继承
+```js
+class Parent {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+class Child extends Parent {
+  constructor(name, age) {
+     super(name);
+     this.age = age;
+  }
+}
+
+var child = new Child('shu', 12);
+console.log(child.name);// shu
 ```
 
 ## 参考
