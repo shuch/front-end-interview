@@ -1,4 +1,4 @@
-## 比较
+## 返回值
 * `useCallback`用来缓存一个函数，`useMemo`用来缓存一个值
 * `useCallback`用来返回一个函数，`useMemo`用来返回一个值
 
@@ -16,6 +16,15 @@ memo;// foo
 callback();//foo
 memo();// TypeError:memo is not function 
 
+```
+
+## 关系
+```js
+useCallback(fn, deps)
+```
+等价于
+```js
+useCallback(() => fn, deps)
 ```
 
 ## 参考
