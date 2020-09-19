@@ -7,6 +7,8 @@
 * 寄生组合式继承
 
 ## 原型链继承
+父类的实例作为子类原型
+
 ```js
 function Parent() {
   this.name = 'shu';
@@ -42,6 +44,8 @@ console.log(child2.name);// ['shu', 'chen']
 —— P167《高级程序设计》
 
 ## 构造函数继承
+子类的构造函数调用父类的构造函数
+
 ```js
 function Parent() {
   this.name = [1];
@@ -87,6 +91,9 @@ child.say();//
 缺点：无法共享父类方法，每次创建实例都初始化一次父类方法
 
 ## 组合继承
+* 原型链继承优点——从`prototype`中继承方法
+* 构造方法继承——从构造函数继承属性
+
 ```js
 function Parent(name) {
   this.name = name;
@@ -107,9 +114,6 @@ var child = new Child();
 console.log(child.name);// shu
 child.say();// say shu
 ```
-组合继承优势：
-* 原型链继承优点——从`prototype`中继承方法
-* 构造方法继承——从构造函数继承属性
 
 ## 参考
 * [JavaScript深入之继承的多种方式和优缺点](https://github.com/mqyqingfeng/Blog/issues/16)
