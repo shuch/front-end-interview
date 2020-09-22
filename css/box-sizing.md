@@ -24,4 +24,5 @@ width = contentWidth + padding * 2 + border * 2
 `background`区域包括`width,padding,border`
 
 ## 参考
+* [The CSS Box Model](https://drafts.csswg.org/css-box-3/#border-box)
 * [CSS-可视化格式模型](https://www.zhiqiang2726.com/2019/03/23/CSS-%E5%8F%AF%E8%A7%86%E5%8C%96%E6%A0%BC%E5%BC%8F%E6%A8%A1%E5%9E%8B/#more)
