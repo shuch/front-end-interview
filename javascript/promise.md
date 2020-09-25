@@ -96,6 +96,22 @@ promiseRace([promise1, promise2]).then((res) => {
 });
 ```
 
+## `promise.finally`实现
+```js
+Promise.prototype.finally = function(callback) {
+  var constructor = this.constructor;
+  return this.then(function(value) {
+    return constructor.resolve(callback()).then(function() {
+      return value;
+    });
+  }, function (reason) {
+    return constructor.resolve(callback()).then(function() {
+      throw reason;
+    });
+  })
+}
+```
+
 ## 题目一
 
 ```
