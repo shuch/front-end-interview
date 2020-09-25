@@ -172,4 +172,5 @@ promise.then(res => {
 ## 参考
 * [图解 Promise 实现原理（一）—— 基础实现](https://zhuanlan.zhihu.com/p/58428287)
 * [Promise.prototype.finally](https://github.com/matthew-andrews/Promise.prototype.finally/blob/master/finally.js)
+* [模拟实现一个 Promise.finally](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/109)
 
