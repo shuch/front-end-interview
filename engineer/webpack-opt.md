@@ -2,7 +2,6 @@
 * 压缩
 * 分包
 * 按需加载
-* `tree-shaking`
 * 多进程
 
 ## 压缩
@@ -35,7 +34,8 @@ optimization: {
 ```
 
 ## 按需加载
-配合`react-router`，采用动态`import()`实现，核心原理是使用`jsonp`加载
+* 配合`react-router`，采用动态`import()`实现，核心原理是使用`jsonp`加载
+* `tree-shaking`，利用es6静态分析去处无用代码。
 
 ## 多进程
 ```js
