@@ -35,7 +35,7 @@ optimization: {
 
 ## 按需加载
 * 配合`react-router`，采用动态`import()`实现，核心原理是使用`jsonp`加载
-* `tree-shaking`，利用es6静态分析去处无用代码。
+* `tree-shaking`，利用es6静态分析引用，去除无用代码。
 
 ## 多进程
 ```js
