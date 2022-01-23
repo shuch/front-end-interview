@@ -7,7 +7,7 @@
 ## CSS部分
 
 1. 垂直水平居中（绝对定位，flex）
-2. css优先级及冲突原则权重(important>內联>id>class>标签）
+2. css优先级及冲突原则权重([important>內联>id>class>标签](css/优先级.md)）
 3. 双栏布局：一栏固定，一栏自适应（flex,float）
 
 
