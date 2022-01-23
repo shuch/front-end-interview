@@ -25,7 +25,7 @@
 ## 项目
 1. 浏览器渲染[原理](https://github.com/shuch/blog/issues/17)以及性能优化（白屏）
 2. 缓存分类([协商缓存和本地缓存原理和区别](https://github.com/shuch/blog/issues/19)）
-3. js性能优化
+3. 性能优化[参考](performance-checklist.md)
 4. webpack4[优化打包体积方式](engineer/webpack-opt.md)
 5. http(s)[握手过程](network/https.md)
 
