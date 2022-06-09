@@ -2,7 +2,7 @@
 ## this指向
 普通函数：
 * 普通函数`this`指向函数调用者
-* 没有调用者，`this`执行 `window` 或 `undefined`(严格模式下)
+* 没有调用者，`this`指向 `window` 或 `undefined`(严格模式下)
 * 使用`call`,`apply`,`bind`调用时，指向第一个参数
 
 箭头函数：
