@@ -11,3 +11,6 @@
 ## 优缺点
 - 在更新UI时，避免节点跨层级之间移动
 - 遇到不更新的节点，给不同的`key`值
+
+## 引用
+[React 源码剖析系列 － 不可思议的 react diff](https://zhuanlan.zhihu.com/p/20346379)
