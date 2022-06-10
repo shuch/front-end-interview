@@ -11,3 +11,6 @@
 
 ## 对比
 原来是同步更新，在fiber中是异步更新dom
+
+## 引用
+[理解 React Fiber](https://segmentfault.com/a/1190000039682751)
