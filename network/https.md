@@ -25,3 +25,6 @@
 * [如何加密传输和存储用户密码](https://juejin.im/post/6844903604944371726)
 * [一次安全可靠的通信——HTTPS原理](https://developers.weixin.qq.com/community/develop/article/doc/000046a5fdc7802a15f7508b556413)
 * [SSL/TLS协议运行机制的概述](https://www.ruanyifeng.com/blog/2014/02/ssl_tls.html)
+
+![一次可靠的通信](https://user-images.githubusercontent.com/29475098/172971666-9c840f8f-58b1-41ca-bf24-aaf9ed8cdec3.png)
+
