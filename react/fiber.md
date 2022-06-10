@@ -13,4 +13,5 @@
 原来是同步更新，在fiber中是异步更新dom
 
 ## 引用
-[理解 React Fiber](https://segmentfault.com/a/1190000039682751)
+* [React Fiber 的作用和原理](https://cloud.tencent.com/developer/article/1882296)
+* [理解 React Fiber](https://segmentfault.com/a/1190000039682751)
