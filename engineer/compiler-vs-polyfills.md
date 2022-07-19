@@ -5,7 +5,7 @@
 
 ## 填充 `polyfills`
 - 一种提供原生浏览器不支持的功能
-- 例如`Promise`和`Array.from`在`IE`浏览器上不支持，可以提供一个`polyfills`填充。
+- 例如`Promise`和`Array.from`在`IE`浏览器上不支持，可以提供一个[`polyfills`](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/from#polyfill)填充。
 
 ## 区别
 - 编译器是代码格式转化，不产生新的功能
