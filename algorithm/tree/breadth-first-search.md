@@ -28,11 +28,12 @@ function breadthFirstSearch(node) {
 数据结构
 ```
     1
-   / \
-  2   3
- /\  /
-4  5 6
+   /  \
+  2    3
+ / \   /
+4   5 6
 ```
+数据结构模拟
 ```js
 tree = {
     "val": 1,
