@@ -24,5 +24,58 @@ function breadthFirstSearch(node) {
 
 ```
 
+## 二叉树的广度优先遍历
+数据结构
+```
+    1
+   / \
+  2   3
+ /\  /
+4  5 6
+```
+```js
+tree = {
+    "val": 1,
+    "left": {
+        "val": 2,
+        "left": {
+            "val": 4,
+            "right": null,
+            "left": null
+        },
+        "right": {
+            "val": 5,
+            "right": null,
+            "left": null
+        }
+    },
+    "right": {
+        "val": 3,
+        "left": {
+            "val": 6,
+            "left": null,
+            "right": null
+        },
+        "right": null
+    }
+}
+```
+使用队列存储二叉树节点，可以按层遍历
+```js
+function binaryTreeBfs(node) {
+  var queue = [node];
+  while(queue.length) {
+    var node = queue.shift()
+    if (node.left) {
+      queue.push(node.left)
+    }
+    if (node.right) {
+      queue.push(node.right)
+    }
+  }
+}
+
+```
+
 ## 参考
 [介绍下深度优先遍历和广度优先遍历，如何实现？](https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/9)
