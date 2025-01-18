@@ -36,6 +36,17 @@ const betterFn = debounce(() => console.log('fn 防抖执行了'), 1000)
 // 停止滑动 1 秒后执行函数 () => console.log('fn 防抖执行了')
 ```
 
+简单版本
+```js
+function debounce(fn, delay) {
+  let timer = null;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+```
+
 ## 节流`throttle`
 跟防抖不同，节流是在某一个时间段，确保函数执行一次。
 
@@ -74,17 +85,6 @@ function throttle(fn, threshold) {
       lastTime = now;
     }
   }
-}
-```
-
-简单版本
-```js
-function debounce(fn, delay) {
-  let timer = null;
-  return function (...args) {
-    clearTimeout(timer);
-    timer = setTimeout(() => fn.apply(this, args), delay);
-  };
 }
 ```
 
