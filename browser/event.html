@@ -26,14 +26,16 @@
             }
         }
 
-        const EventEmitter = new EventEmitter()
+        const eventEmitter = new EventEmitter()
 
-        function bindEvent(name) {
-            EventEmitter.bind(name, () => console.log('say hello'))
+        function bindEvent(eventName) {
+            eventEmitter.bind(eventName, () => {
+                alert(`${eventName} event triggered!`);
+            })
         }
 
         function triggerEvent(name) {
-            EventEmitter.triggerEvent(name)
+            eventEmitter.triggerEvent(name)
         }
 
     </script>
