@@ -2,7 +2,8 @@
     <body>
         <h1>事件模型</h1>
         <button onclick="bindEvent('greet')">绑定事件</button>
-        <button onclick="triggerEvent('greet')">触发事件</button>
+        <button onclick="triggerEvent('greet', 'halo', 'morning')">触发事件</button>
+        <button onclick="unbindEvent('greet', 'halo', 'morning')">解绑事件</button>
     </body>
     <script>
         class EventEmitter {
@@ -18,6 +19,13 @@
                 this.events[eventName].push(callback)
             }
 
+            unbind(eventName, callback) {
+                //解绑事件
+                if(this.events[eventName]) {
+                    this.events[eventName] = this.events[eventName].filter(cb => cb !== callback)
+                }
+            }
+
             triggerEvent(event, ...args) {
                 //触发事件
                 if(this.events[event]) {
@@ -29,13 +37,22 @@
         const eventEmitter = new EventEmitter()
 
         function bindEvent(eventName) {
-            eventEmitter.bind(eventName, () => {
-                alert(`${eventName} event triggered!`);
-            })
+            const callback = (...args) => {
+                alert(`${eventName} event triggered with ${args.join(', ')}`);
+            }
+            eventEmitter.bind(eventName,callback)
+            window[eventName+'Callback'] = callback
         }
 
-        function triggerEvent(name) {
-            eventEmitter.triggerEvent(name)
+        function triggerEvent(name, ...args) {
+            eventEmitter.triggerEvent(name, ...args)
+        }
+
+        function unbindEvent(eventName) {
+            if (window[eventName+'Callback']) {
+                eventEmitter.unbind(eventName, window[eventName+'Callback'])
+                alert(`${eventName} event unbound`);
+            }
         }
 
     </script>
