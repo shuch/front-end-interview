@@ -77,6 +77,17 @@ function throttle(fn, threshold) {
 }
 ```
 
+简单版本
+```js
+function debounce(fn, delay) {
+  let timer = null;
+  return function (...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+```
+
 说明：
 1. 当函数调用在`threshold`间隔内触发时，不执行函数。
 2. 若只调用了一次，确保函数在`threshold`后执行。
