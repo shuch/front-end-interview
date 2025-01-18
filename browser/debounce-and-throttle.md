@@ -5,39 +5,6 @@
 在多次触发某一个函数时，以最后一次触发时间为准，延迟执行一次。
 
 ```js
-function debounce(fn, delay, immediate) {
-  var timer;
-  return function() {
-    /* 1 */
-    var context = this;
-    var args = arguments;
-    clearTimeout(timer);
-
-    /* 2 */
-    if (immediate && !timer) {
-      fn.apply(context, args);
-    }
-
-    timer = setTimeout(function() {
-      fn.apply(context, args);
-    }, delay);
-  }
-}
-
-```
-说明
-1. 缓存函数运行时的`this`，否则在`setTimeout`中会丢失上下文
-2. 为了实现第一次触发事件就执行函数，加了<font style="color: #0ABF5B">immdiate</font>
-
-测试
-```js
-document.addEventListener('scroll', betterFn)
-const betterFn = debounce(() => console.log('fn 防抖执行了'), 1000)
-// 停止滑动 1 秒后执行函数 () => console.log('fn 防抖执行了')
-```
-
-简单版本
-```js
 function debounce(fn, delay) {
   let timer = null;
   return function (...args) {
@@ -45,6 +12,13 @@ function debounce(fn, delay) {
     timer = setTimeout(() => fn.apply(this, args), delay);
   };
 }
+```
+
+测试
+```js
+document.addEventListener('scroll', betterFn)
+const betterFn = debounce(() => console.log('fn 防抖执行了'), 1000)
+// 停止滑动 1 秒后执行函数 () => console.log('fn 防抖执行了')
 ```
 
 ## 节流`throttle`
