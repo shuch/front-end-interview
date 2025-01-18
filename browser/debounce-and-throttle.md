@@ -51,22 +51,15 @@ function debounce(fn, delay) {
 跟防抖不同，节流是在某一个时间段，确保函数执行一次。
 
 ```js
-function throttle(fn, threshold) {
-  var timer;
-
-  return function() {
-    var context = this;
-    var args = context;
-
-    if (timer) {
-      return;
+function throttle(fn, interval) {
+  let lastTime = 0;
+  return function (...args) {
+    const now = Date.now();
+    if (now - lastTime >= interval) {
+      lastTime = now;
+      fn.apply(this, args);
     }
-
-    timer = setTimeout(function() {
-      fn.apply(context, args);
-      timer = null;
-    }, threshold);
-  }
+  };
 }
 ```
 
