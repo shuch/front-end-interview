@@ -11,10 +11,10 @@
 
 防范：
 * 对输入字符转义
-* 设置内容安全策略`content-security-policy: default-src 'seft'`
+* 设置内容安全策略 `Content-Security-Policy: script-src 'self' https://trusted-scripts.com`
 * 设置`x-xss-protection: 1;mode=block`
-* 设置`httpOnly`，禁止`js`操作`cookie`
-* 设置`secure`，在`https header`中发送`cookie`
+* 设置`httpOnly`，禁止`js`操作`cookie` 例如 `Set-Cookie: sessionId=abc123; HttpOnly`
+* 设置`secure`，在`https header`中发送`cookie` `Set-Cookie: sessionId=abc123; Secure`
 
 ## `CSRF`
 * 跨站请求伪造（`cross site request forgery`）
