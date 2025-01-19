@@ -1,5 +1,5 @@
 ## 错误捕获与上报模块
-´´´js
+```js
 (function () {
     const reportError = (errorInfo) => {
         fetch('/error-report', {
@@ -31,4 +31,6 @@
         reportError({ type: 'unhandledrejection', reason: event.reason });
     };
 })();
-´´´
+```
+
+
