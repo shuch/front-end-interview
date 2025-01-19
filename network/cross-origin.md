@@ -14,15 +14,16 @@ Access-Control-Allow-Headers: Content-Type
 ## JSONP 跨域
 相比 cors，jsonp支持支get请求
 通过 <script> 标签，动态设置 src 属性实现跨域
-```javascript
+```js
 function jsonp(req) {
-  const calbackName = 'callback' + Date.now();
-  script.src = req.url + '?callback=' + callbackName;
   return new Promise((resolve) => {
-     const script = document.createElement('script');
-     window[calbackName] = function(json)  {
-        resolve(json);
+     // 挂载回调函数     
+     const calbackName = 'callback' + Date.now();
+     window[calbackName] = function(data)  {
+        resolve(data);
      }
+     const script = document.createElement('script');
+     script.src = req.url + '?callback=' + callbackName;
   });
 }
 // 使用
