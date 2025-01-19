@@ -1,5 +1,5 @@
 > 跨域方式
-## cors 跨域资源共享
+## CORS 跨域资源共享
 cross origin resource sharing
 通过在服务端设置 HTTP 响应头控制跨域
 ```http
