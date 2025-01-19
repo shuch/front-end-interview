@@ -27,7 +27,7 @@
 - 如果资源未修改，则`http`状态码返回`304`，即`Not-Modified`
 - 资源已更新，返回新的资源，并设置`cache-control`
 
-响应头
+响应头和请求头
 - `Last-Modified`和`If-Modified-Since`
 - `Etag`和 `If-None-Match`
 
