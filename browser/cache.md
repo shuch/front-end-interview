@@ -13,6 +13,8 @@
 | -- | -- |--|
 |cache-control|max-age=31536000,public|一年内有效，允许代理服务器缓存|
 |cache-control|max-age=31536000,private|一年内有效，不允许代理服务器缓存|
+|cache-control|max-age=31536000,immutable|一年内有效，有效期内直接使用缓存，不需要服务器重新验证|
+|cache-control|max-age=1000,must-revalidate|一分钟内有效，有效期过后需要服务器重新验证新鲜度|
 |cache-control|no-cache|客户端不使用强制缓存，而走协商缓存|
 |cache-control|no-store|客户端不缓存，每次请求服务器|
 
