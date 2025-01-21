@@ -9,6 +9,31 @@
 - 在更新过程中，根据任务的优先级来执行渲染
 
 
+```js
+function performWorkUntilDeadline() {
+  // 获取当前时间
+  const currentTime = performance.now();
+
+  // 如果当前时间 - 上次执行时间 超过了 sliceTime，说明需要中断
+  if (currentTime - lastTime >= sliceTime) {
+    // 中断任务，等待主线程空闲时再继续
+    requestIdleCallback(performWorkUntilDeadline);
+  } else {
+    // 执行任务的一个分片
+    const work = getNextUnitOfWork();
+    if (work) {
+      performUnitOfWork(work); // 执行当前的 Fiber 节点任务
+    }
+
+    // 递归调用，继续处理下一分片
+    performWorkUntilDeadline();
+  }
+
+  // 更新上次执行时间
+  lastTime = performance.now();
+}
+```
+
 ## 对比
 原来是同步更新，在fiber中是异步更新dom
 
