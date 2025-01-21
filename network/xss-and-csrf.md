@@ -14,7 +14,7 @@
 * 设置内容安全策略 `Content-Security-Policy: script-src 'self' https://trusted-scripts.com`
 * 设置`x-xss-protection: 1;mode=block`
 * 设置`httpOnly`，禁止`js`操作`cookie` 例如 `Set-Cookie: sessionId=abc123; HttpOnly`
-* 设置`secure`，在`https header`中发送`cookie` `Set-Cookie: sessionId=abc123; Secure`
+* 设置`secure`，确保在`cookie` 通过 `https`连接发送，防止`http`请求在传输中被拦截或篡改。`Set-Cookie: sessionId=abc123; Secure`
 
 ## `CSRF`
 * 跨站请求伪造（`cross site request forgery`）
