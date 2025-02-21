@@ -1,5 +1,9 @@
 > prefetch preload prerender对比
 
+Preconnect
+http link
+
+
 |特性	|Prefetch	|Preload	|Prerender|
 |---|---|---|---|
 |目的	|浏览器空闲时预加载资源	|优先加载当前页面的关键资源	|提前渲染整个页面|
