@@ -37,8 +37,7 @@
 * 断开`HTTP`连接，四次挥手
 
 ### 流程图
-
-
+![what-happened-in-browser-url](https://github.com/user-attachments/assets/29fdb189-f094-4d86-af71-648f55277826)
 
 > 参考
 * [渲染页面：浏览器的工作原理](https://developer.mozilla.org/zh-CN/docs/Web/Performance/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86)
