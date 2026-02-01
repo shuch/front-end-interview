@@ -13,3 +13,20 @@
 ## loader 与 plugin 区别
 * loader 用于单个文件格式转换（sass转css或处理图片），modules.rules定义
 * plugin 用于将打包结果进行处理，压缩，文件提取，如MiniCssExtractPlugin，将css提取为独立文件。
+
+## 示例
+```
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    filename: 'bundle.js',
+    path: path.resolve(__dirname, 'dist'),
+  },
+  module: {
+    rules: [
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+    ],
+  },
+  plugins: [new HtmlWebpackPlugin({ template: './src/index.html' })],
+};
+```
